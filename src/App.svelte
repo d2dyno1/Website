@@ -5,7 +5,9 @@
     import { Flex } from 'components/Flex';
     import { Button } from 'components/Button';
     import { PageSection } from 'components/PageSection';
+
     import Navbar from './Navbar.svelte';
+    import AppSkeleton from './AppSkeleton.svelte';
 
     let canvas;
     let version = '';
@@ -109,198 +111,13 @@
                         </Button>
                     </Flex>
                 </Flex>
-                <div class="acrylic-material app-preview">
-                    <Flex id="app-preview-splitview">
-                        <aside>
-                            <Flex align="center" id="app-preview-sidebar-header">
-                                <button class="sidebar-button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                        <path d="M2.75254 17.9997H21.2525C21.6667 17.9997 22.0025 18.3355 22.0025 18.7497C22.0025 19.1294 21.7204 19.4432 21.3543 19.4928L21.2525 19.4997H2.75254C2.33832 19.4997 2.00254 19.1639 2.00254 18.7497C2.00254 18.37 2.28469 18.0562 2.65077 18.0065L2.75254 17.9997H21.2525H2.75254ZM2.75254 11.5027H21.2525C21.6667 11.5027 22.0025 11.8385 22.0025 12.2527C22.0025 12.6324 21.7204 12.9462 21.3543 12.9959L21.2525 13.0027H2.75254C2.33832 13.0027 2.00254 12.6669 2.00254 12.2527C2.00254 11.873 2.28469 11.5592 2.65077 11.5095L2.75254 11.5027H21.2525H2.75254ZM2.75168 5.00293H21.2517C21.6659 5.00293 22.0017 5.33872 22.0017 5.75293C22.0017 6.13263 21.7195 6.44642 21.3535 6.49608L21.2517 6.50293H2.75168C2.33746 6.50293 2.00168 6.16714 2.00168 5.75293C2.00168 5.37323 2.28383 5.05944 2.64991 5.00978L2.75168 5.00293H21.2517H2.75168Z" fill="currentColor"/>
-                                    </svg>
-                                </button>
-                                <h5>Files</h5>
-                            </Flex>
-                            <ul>
-                                <li class="selected">test</li>
-                                <li>test</li>
-                                <li>test</li>
-                            </ul>
-                        </aside>
-                        <main>
-                            <header>
-                                <nav>
-                                    <div class="tab selected">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                            <path d="M5.25 3C3.45507 3 2 4.45507 2 6.25V21.75C2 23.5449 3.45507 25 5.25 25H12.01V27.0013L9.01196 27.0013C8.45967 27.0013 8.01196 27.4488 8.01196 28.0007C8.01197 28.5526 8.45969 29 9.01197 29L23.0043 28.9999C23.5565 28.9999 24.0042 28.5525 24.0042 28.0005C24.0042 27.4486 23.5565 27.0012 23.0042 27.0012L20.0059 27.0012V25H26.75C28.5449 25 30 23.5449 30 21.75V6.25C30 4.45507 28.5449 3 26.75 3H5.25ZM18.0059 25V27.0013L14.01 27.0013V25H18.0059ZM4 6.25C4 5.55964 4.55964 5 5.25 5H26.75C27.4404 5 28 5.55964 28 6.25V21.75C28 22.4404 27.4404 23 26.75 23H5.25C4.55964 23 4 22.4404 4 21.75V6.25Z" fill="currentColor"/>
-                                        </svg>
-                                        Desktop
-                                    </div>
-                                    <div class="tab">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M7 12C7.55228 12 8 11.5523 8 11C8 10.4477 7.55228 10 7 10C6.44772 10 6 10.4477 6 11C6 11.5523 6.44772 12 7 12Z M11 11C11 11.5523 10.5523 12 10 12C9.44772 12 9 11.5523 9 11C9 10.4477 9.44772 10 10 10C10.5523 10 11 10.4477 11 11Z M13 12C13.5523 12 14 11.5523 14 11C14 10.4477 13.5523 10 13 10C12.4477 10 12 10.4477 12 11C12 11.5523 12.4477 12 13 12Z M3 5.5C3 4.11929 4.11929 3 5.5 3H14.5C15.8807 3 17 4.11929 17 5.5V14.5C17 15.8807 15.8807 17 14.5 17H5.5C4.11929 17 3 15.8807 3 14.5V5.5ZM5.5 4C4.67157 4 4 4.67157 4 5.5V14.5C4 15.3284 4.67157 16 5.5 16H14.5C15.3284 16 16 15.3284 16 14.5V7H9.5C8.67157 7 8 6.32843 8 5.5V4H5.5ZM16 5.5C16 4.67157 15.3284 4 14.5 4H9V5.5C9 5.77614 9.22386 6 9.5 6H16V5.5Z" fill="currentColor"/>
-                                        </svg>
-                                        New Tab
-                                    </div>
-                                    <button>
-                                        
-                                    </button>
-                                </nav>
-                            </header>
-                        </main>
-                    </Flex>
-                </div>
+                <AppSkeleton/>
                 <canvas width="32" height="32" bind:this={canvas} id="background-canvas"/>
             </Flex>
     </PageSection>
 </template>
 
 <style lang="scss">
-    .app-preview {
-        user-select: none;
-        * {
-            font-family: 'Segoe UI', sans-serif;
-        }
-        :global {
-            #app-preview-splitview {
-                height: 100%;
-                zoom: 80%;
-            }
-            aside {
-                flex: 0 0 auto;
-                width: 250px;
-                #app-preview-sidebar-header {
-                    padding: 8px;
-                }
-                .sidebar-button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 45px;
-                    width: 50px;
-                    border: none;
-                    background: none;
-                    border-radius: 4px;
-                    margin-right: 8px;
-                    svg {
-                        transition: transform 150ms ease;
-                    }
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.03);
-                        svg {
-                            transform: scaleX(0.85);
-                        }
-                    }
-                    &:active {
-                        background-color: rgba(0, 0, 0, 0.02);
-                        color: #5d5d5d;
-                        svg {
-                            transform: scaleX(0.65);
-                        }
-                    }
-                }
-                ul {
-                    margin: 0;
-                    padding: 8px;
-                    li {
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        height: 40px;
-                        width: 100%;
-                        border-radius: 4px;
-                        padding: 0 14px;
-                        margin-bottom: 4px;
-                        color: #5d5d5d;
-                        font-weight: 400;
-                        &:hover {
-                            background-color: rgba(0, 0, 0, 0.03);
-                        }
-                        &:active {
-                            background-color: rgba(0, 0, 0, 0.02);
-                        }
-                        &:active,
-                        &.selected {
-                            color: #000;
-                        }
-                        &.selected::before {
-                            content: '';
-                            position: absolute;
-                            left: 0;
-                            width: 3px;
-                            height: 20px;
-                            border-radius: 8px;
-                            background-color: var(--accent);
-                        }
-                    }
-                }
-                h5 {
-                    margin: 0;
-                    line-height: normal;
-                    font-size: 16px;
-                    font-weight: 600;
-                    color: #000;
-                }
-            }
-        }
-        main {
-            flex: 1 1 auto;
-            background-color: #f3f3f3;
-            height: 100%;
-            box-shadow: 0 0 18px rgba(0, 0, 0, 0.085);
-            overflow: hidden;
-            header {
-                background-color: #eeeeee;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.085);
-                nav {
-                    padding: 12px;
-                    padding-top: 10px;
-                    padding-bottom: 4px;
-                    display: flex;
-                    align-items: center;
-                }
-                .tab {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 12px;
-                    font-size: 12px;
-                    height: 36px;
-                    width: 240px;
-                    margin-right: 10px;
-                    border-radius: 5px;
-                    color: #000;
-                    svg {
-                        width: 18px;
-                        height: 18px;
-                        margin-right: 10px;
-                    }
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        right: 0;
-                        height: 30px;
-                        border-left: 1px solid rgba(0, 0, 0, 0.25);
-                    }
-                    &:hover {
-                        background-color: #f9f9f9;
-                    }
-                    &:active,
-                    &.selected {
-                        background-color: #f9f9f9;
-                        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102); 
-                    }
-                    &:hover, &:active, &.selected {
-                        &::after {
-                            content: none;
-                        }
-                    }
-                    &.selected {
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
-    }
     :global {
         #hero-section {
             z-index: 1;
@@ -337,22 +154,6 @@
         #hero-button-container {
             margin-top: 24px;
         }
-    }
-
-    .app-preview {
-        position: relative;
-        right: -72px;
-        width: auto;
-        height: 70vh;
-        max-height: 600px;
-        aspect-ratio: 34 / 27;
-        border-radius: 4px;
-        box-shadow: 0 2.74416px 2.74416px rgb(0 0 0 / 3%),
-                    0 5.48831px 5.48831px rgb(0 0 0 / 4%),
-                    0 13.7208px 10.9766px rgb(0 0 0 / 5%),
-                    0 20.5812px 20.5812px rgb(0 0 0 / 6%),
-                    0 41.1623px 41.1623px rgb(0 0 0 / 7%),
-                    0 96.0454px 89.1851px rgb(0 0 0 / 9%);
     }
 
     #background-canvas {
