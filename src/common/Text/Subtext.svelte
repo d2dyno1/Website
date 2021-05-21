@@ -11,7 +11,7 @@
 <style lang="scss">
     .subtext {
         margin: 0;
-        color: #666666;
+        color: var(--text-secondary);
         font-weight: 500;
         font-size: 16px;
         line-height: 1.4;

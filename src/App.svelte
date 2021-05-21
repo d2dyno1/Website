@@ -130,8 +130,20 @@
                             <header>
                                 <nav>
                                     <div class="tab selected">
-                                        Tab 1
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                            <path d="M5.25 3C3.45507 3 2 4.45507 2 6.25V21.75C2 23.5449 3.45507 25 5.25 25H12.01V27.0013L9.01196 27.0013C8.45967 27.0013 8.01196 27.4488 8.01196 28.0007C8.01197 28.5526 8.45969 29 9.01197 29L23.0043 28.9999C23.5565 28.9999 24.0042 28.5525 24.0042 28.0005C24.0042 27.4486 23.5565 27.0012 23.0042 27.0012L20.0059 27.0012V25H26.75C28.5449 25 30 23.5449 30 21.75V6.25C30 4.45507 28.5449 3 26.75 3H5.25ZM18.0059 25V27.0013L14.01 27.0013V25H18.0059ZM4 6.25C4 5.55964 4.55964 5 5.25 5H26.75C27.4404 5 28 5.55964 28 6.25V21.75C28 22.4404 27.4404 23 26.75 23H5.25C4.55964 23 4 22.4404 4 21.75V6.25Z" fill="currentColor"/>
+                                        </svg>
+                                        Desktop
                                     </div>
+                                    <div class="tab">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M7 12C7.55228 12 8 11.5523 8 11C8 10.4477 7.55228 10 7 10C6.44772 10 6 10.4477 6 11C6 11.5523 6.44772 12 7 12Z M11 11C11 11.5523 10.5523 12 10 12C9.44772 12 9 11.5523 9 11C9 10.4477 9.44772 10 10 10C10.5523 10 11 10.4477 11 11Z M13 12C13.5523 12 14 11.5523 14 11C14 10.4477 13.5523 10 13 10C12.4477 10 12 10.4477 12 11C12 11.5523 12.4477 12 13 12Z M3 5.5C3 4.11929 4.11929 3 5.5 3H14.5C15.8807 3 17 4.11929 17 5.5V14.5C17 15.8807 15.8807 17 14.5 17H5.5C4.11929 17 3 15.8807 3 14.5V5.5ZM5.5 4C4.67157 4 4 4.67157 4 5.5V14.5C4 15.3284 4.67157 16 5.5 16H14.5C15.3284 16 16 15.3284 16 14.5V7H9.5C8.67157 7 8 6.32843 8 5.5V4H5.5ZM16 5.5C16 4.67157 15.3284 4 14.5 4H9V5.5C9 5.77614 9.22386 6 9.5 6H16V5.5Z" fill="currentColor"/>
+                                        </svg>
+                                        New Tab
+                                    </div>
+                                    <button>
+                                        
+                                    </button>
                                 </nav>
                             </header>
                         </main>
@@ -155,7 +167,7 @@
             }
             aside {
                 flex: 0 0 auto;
-                width: 235px;
+                width: 250px;
                 #app-preview-sidebar-header {
                     padding: 8px;
                 }
@@ -180,6 +192,7 @@
                     }
                     &:active {
                         background-color: rgba(0, 0, 0, 0.02);
+                        color: #5d5d5d;
                         svg {
                             transform: scaleX(0.65);
                         }
@@ -197,11 +210,17 @@
                         border-radius: 4px;
                         padding: 0 14px;
                         margin-bottom: 4px;
+                        color: #5d5d5d;
+                        font-weight: 400;
                         &:hover {
                             background-color: rgba(0, 0, 0, 0.03);
                         }
                         &:active {
                             background-color: rgba(0, 0, 0, 0.02);
+                        }
+                        &:active,
+                        &.selected {
+                            color: #000;
                         }
                         &.selected::before {
                             content: '';
@@ -234,19 +253,48 @@
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.085);
                 nav {
                     padding: 12px;
+                    padding-top: 10px;
+                    padding-bottom: 4px;
+                    display: flex;
+                    align-items: center;
                 }
                 .tab {
+                    position: relative;
                     display: flex;
                     align-items: center;
                     padding: 0 12px;
                     font-size: 12px;
-                    height: 38px;
-                    widtH: 250px;
+                    height: 36px;
+                    width: 240px;
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    color: #000;
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 10px;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        height: 30px;
+                        border-left: 1px solid rgba(0, 0, 0, 0.25);
+                    }
+                    &:hover {
+                        background-color: #f9f9f9;
+                    }
+                    &:active,
                     &.selected {
                         background-color: #f9f9f9;
-                        box-shadow: inset 0 0 0 1px #dfdfdf, 0 4px 6px rgba(0, 0, 0, 0.065);
-                        border-radius: 5px;
-                        color: #000;
+                        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102); 
+                    }
+                    &:hover, &:active, &.selected {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                    &.selected {
                         font-weight: 500;
                     }
                 }
@@ -264,7 +312,7 @@
             justify-content: center;
             overflow: hidden;
             padding: 64px 72px;
-            background: #f1f1f1;
+            background: var(--background-primary);
         }
         #hero-inner-container .button {
             padding: 0 12px;
@@ -318,6 +366,10 @@
         pointer-events: none;
     }
 
+    :global(.theme-dark #background-canvas) {
+        opacity: 0.5;
+    }
+
     :global {
         .acrylic-material {
             backdrop-filter: blur(60px) saturate(5);
@@ -334,12 +386,8 @@
             opacity: 0.8;
         }
 
-        .theme-light .acrylic-material::before {
-            background: linear-gradient(0deg, rgba(239, 239, 239, 0.3), rgba(239, 239, 239, 0.3)), rgba(239, 239, 239, 0.95) url('https://modernflyouts-community.github.io/assets/noise.png') center/196px repeat;
-        }
-
-        .theme-dark .acrylic-material::before {
-            background: linear-gradient(0deg, rgba(45, 45, 45, 0.2), rgba(45, 45, 45, 0.2)), rgba(45, 45, 45, .95) url('https://modernflyouts-community.github.io/assets/noise.png') center/196px repeat;
+        .acrylic-material::before {
+            background: var(--acrylic-layer);
         }
     }
 </style>

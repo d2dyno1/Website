@@ -58,14 +58,14 @@
         }
         &.type- {
             &secondary {
-                color: rgba(0, 0, 0, 0.894);
+                color: var(--text-primary);
                 background-color: rgba(255, 255, 255, 0.7);
                 box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
                 &:hover {
-                    background-color: rgba(255, 255, 255, 0.49);
+                    background-color: rgba(255, 255, 255, 0.5);
                 }
                 &:active {
-                    background-color: rgba(249, 249, 249, 0.302);
+                    background-color: rgba(255, 255, 255, 0.3);
                     color: rgba(0, 0, 0, 0.62);
                 }
             }

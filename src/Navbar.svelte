@@ -8,7 +8,7 @@
 <template>
     <header class="navbar">
         <nav>
-            <a href="/">
+            <a class="navbar-logo-wrap" href="/">
                 <img class="navbar-logo" src="https://files-community.github.io/img/logo.png" alt="Files logo"/>
             </a>
             <div class="navbar-divider" role="separator"></div>
@@ -42,6 +42,10 @@
         }
     }
 
+    .navbar-logo-wrap {
+        border-radius: 4px;
+    }
+
     .navbar-logo {
         user-select: none;
         -webkit-user-drag: none;
@@ -53,12 +57,12 @@
         user-select: none;
         text-decoration: none;
         font-weight: 500;
-        color: #000;
+        color: var(--text-primary);
         opacity: .5;
         font-size: 16px;
         cursor: pointer;
-        transition: 200ms ease;
-        border-radius: 5px;
+        transition: 200ms ease opacity;
+        border-radius: 2px;
         margin-right: 32px;
         &:hover {
             opacity: .75;
