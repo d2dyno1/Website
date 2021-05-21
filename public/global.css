@@ -1,0 +1,20 @@
+@import url('https://rsms.me/inter/inter.css');
+
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+    margin: 0;
+}
+
+*, *::before, *::after {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #0078d4;
+    --accent-hover: #005ca3;
+    --accent-active: #006bbd;
+}
