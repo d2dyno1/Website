@@ -31,11 +31,9 @@
         const red = (x, y, t) => {
             return (Math.floor(192 + 64 * Math.cos((x * x - y * y) / 300 + t)));
         }
-
         const green = (x, y, t) => {
             return (Math.floor(192 + 64 * Math.sin((x * x * Math.cos(t / 4) + y * y * Math.sin(t / 3)) / 300)));
         }
-
         const blue = (x, y, t) => {
             return (Math.floor(192 + 64 * Math.sin(5 * Math.sin(t / 9) + ((x - 100) * (x - 100) + (y - 100) * (y - 100)) / 1100)));
         }
@@ -162,7 +160,12 @@
         border-radius: 4px 0 0 4px;
         object-position: left;
         object-fit: cover;
-        box-shadow: 0 2.74416px 2.74416px rgb(0 0 0 / 3%), 0 5.48831px 5.48831px rgb(0 0 0 / 4%), 0 13.7208px 10.9766px rgb(0 0 0 / 5%), 0 20.5812px 20.5812px rgb(0 0 0 / 6%), 0 41.1623px 41.1623px rgb(0 0 0 / 7%), 0 96.0454px 89.1851px rgb(0 0 0 / 9%);
+        box-shadow: 0 2.74416px 2.74416px rgb(0 0 0 / 3%),
+                    0 5.48831px 5.48831px rgb(0 0 0 / 4%),
+                    0 13.7208px 10.9766px rgb(0 0 0 / 5%),
+                    0 20.5812px 20.5812px rgb(0 0 0 / 6%),
+                    0 41.1623px 41.1623px rgb(0 0 0 / 7%),
+                    0 96.0454px 89.1851px rgb(0 0 0 / 9%);
     }
 
     #background-canvas {
