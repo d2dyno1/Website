@@ -69,6 +69,18 @@
                             </svg>
                         </button>
                     </Flex>
+                    <Flex id="app-skeleton-options-container" align="center" justify="end">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 6.25C3 4.45507 4.45507 3 6.25 3H17.75C19.5449 3 21 4.45507 21 6.25V17.75C21 19.5449 19.5449 21 17.75 21H6.25C4.45507 21 3 19.5449 3 17.75V6.25ZM6.25 4.5C5.2835 4.5 4.5 5.2835 4.5 6.25V17.75C4.5 18.7165 5.2835 19.5 6.25 19.5H9V4.5H6.25ZM10.5 4.5V14H19.5V6.25C19.5 5.2835 18.7165 4.5 17.75 4.5H10.5ZM19.5 15.5H10.5V19.5H17.75C18.7165 19.5 19.5 18.7165 19.5 17.75V15.5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M15.752 24C15.752 25.7949 14.2969 27.25 12.502 27.25C10.707 27.25 9.25195 25.7949 9.25195 24C9.25195 22.2051 10.707 20.75 12.502 20.75C14.2969 20.75 15.752 22.2051 15.752 24Z M27.252 24C27.252 25.7949 25.7969 27.25 24.002 27.25C22.207 27.25 20.752 25.7949 20.752 24C20.752 22.2051 22.207 20.75 24.002 20.75C25.7969 20.75 27.252 22.2051 27.252 24Z M35.502 27.25C37.2969 27.25 38.752 25.7949 38.752 24C38.752 22.2051 37.2969 20.75 35.502 20.75C33.707 20.75 32.252 22.2051 32.252 24C32.252 25.7949 33.707 27.25 35.502 27.25Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </Flex>
                 </header>
             </main>
         </Flex>
@@ -94,33 +106,14 @@
         * {
             font-family: 'Segoe UI', sans-serif;
         }
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 36px;
-            width: 45px;
-            background: none;
-            border: none;
-            border-radius: 5px;
-            transition: 100ms ease transform;
-            color: #5d5d5d;
-            svg {
-                width: 22px;
-                height: auto;
-            }
-            &:hover {
-                color: #000;
-                background-color: #d3d3d3;
-            }
-            &:active {
-                transform: scale(0.96);
-            }
-        }
         :global {
-            #app-skeleton-navigation-container {
+            #app-skeleton-navigation-container,
+            #app-skeleton-options-container {
                 gap: 6px;
                 padding: 4px 8px;
+            }
+            #app-skeleton-options-container {
+                padding-top: 0;
             }
             #app-skeleton-splitview {
                 height: 100%;
@@ -224,6 +217,29 @@
         height: 100%;
         box-shadow: 0 0 18px rgba(0, 0, 0, 0.085);
         overflow: hidden;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            width: 45px;
+            background: none;
+            border: none;
+            border-radius: 5px;
+            transition: 100ms ease transform;
+            color: #5d5d5d;
+            svg {
+                width: 22px;
+                height: auto;
+            }
+            &:hover {
+                color: #000;
+                background-color: #d3d3d3;
+            }
+            &:active {
+                transform: scale(0.96);
+            }
+        }
     }
     .app-skeleton-header {
         background-color: #eeeeee;

@@ -23,7 +23,8 @@ html, body {
     --accent-hover: #005ca3;
     --accent-active: #006bbd;
 
-    --background-primary: #f1f1f1;
+    --background-primary: #fff;
+    --background-secondary: #f1f1f1;
     --text-primary: #141414;
     --text-secondary: #6f6f6f;
 
@@ -35,7 +36,8 @@ html, body {
     --accent-hover: #005ca3;
     --accent-active: #006bbd;
 
-    --background-primary: #0f0f0f;
+    --background-primary: #000;
+    --background-secondary: #0f0f0f;
     --text-primary: #f1f1f1;
     --text-secondary: #a6a6a6;
 

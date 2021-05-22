@@ -20,7 +20,7 @@
         {/if}
     </button>
 {:else}
-    <a class="button {(types.indexOf(type) > -1) ? `type-${type}` : 'type-secondary'}" type="button" role="button" target={(target === '_blank') ? target : undefined} {href} {id} {disabled}>
+    <a class="button {(types.indexOf(type) > -1) ? `type-${type}` : 'type-secondary'}" type="button" role="button" target={(target === '_blank') ? '_blank' : undefined} rel={(target === '_blank') ? 'noreferrer noopener' : undefined} {href} {id} {disabled}>
         {#if custom}
             <slot/>
         {:else}

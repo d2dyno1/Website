@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { releaseEndpoint, storeId, githubUrl } from './stores';
+    import { releaseEndpoint, contributorsEndpoint, storeId, githubUrl } from './stores';
     import { Title, Subtext } from 'components/Text';
     import { Flex } from 'components/Flex';
     import { Button } from 'components/Button';
@@ -11,10 +11,22 @@
 
     let canvas;
     let version = '';
+    let contributors1 = [];
+    let contributors2 = [];
+    let contributors3 = [];
 
     async function getReleaseVersion(endpoint) {
         return await fetch(endpoint).then(result => result.json()).then(result => {
             if (result) return result.tag_name;
+        }).catch(err => {
+            console.error(err);
+            return '';
+        });
+    }
+
+    async function getContributors(endpoint) {
+        return await fetch(endpoint).then(result => result.json()).then(result => {
+            return result;
         }).catch(err => {
             console.error(err);
             return '';
@@ -55,6 +67,13 @@
         // Fetch our release version
         (async () => {
             version = await getReleaseVersion($releaseEndpoint);
+        })();
+
+        // Fetch contributors
+        (async () => {
+            contributors1 = await getContributors(`${$contributorsEndpoint}&page=1`);
+            contributors2 = await getContributors(`${$contributorsEndpoint}&page=2`);
+            contributors3 = await getContributors(`${$contributorsEndpoint}&page=3`);
         })();
     });
 </script>
@@ -115,6 +134,47 @@
                 <canvas width="32" height="32" bind:this={canvas} id="background-canvas"/>
             </Flex>
     </PageSection>
+    <PageSection id="community-section">
+        <Flex id="community-section-inner" align="center" justify="center" direction="column">
+            <Title size={3} center>Community Driven</Title>
+            <Subtext center>
+                Files is completely free and open source software maintained by the community.
+            </Subtext>
+            <div class="contributors-container">
+                {#each contributors1 as contributor}
+                    <div class="contributor-card">
+                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                        <div class="contributor-info">
+                            <h5>{contributor.login}</h5>
+                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+            <div class="contributors-container">
+                {#each contributors2 as contributor}
+                    <div class="contributor-card">
+                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                        <div class="contributor-info">
+                            <h5>{contributor.login}</h5>
+                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+            <div class="contributors-container">
+                {#each contributors3 as contributor}
+                    <div class="contributor-card">
+                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                        <div class="contributor-info">
+                            <h5>{contributor.login}</h5>
+                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        </Flex>
+    </PageSection>
 </template>
 
 <style lang="scss">
@@ -129,7 +189,7 @@
             justify-content: center;
             overflow: hidden;
             padding: 64px 72px;
-            background: var(--background-primary);
+            background: var(--background-secondary);
         }
         #hero-inner-container .button {
             padding: 0 12px;
@@ -154,6 +214,25 @@
         #hero-button-container {
             margin-top: 24px;
         }
+        #community-section {
+            overflow: hidden;
+            background: var(--background-primary);
+            .subtext {
+                margin-bottom: 24px;
+            }
+        }
+    }
+    
+    @keyframes contributors-scroller-right {
+        to {
+            transform: translateX(50%);
+        }
+    }
+
+    @keyframes contributors-scroller-left {
+        to {
+            transform: translateX(-50%);
+        }
     }
 
     #background-canvas {
@@ -165,6 +244,51 @@
         mask: radial-gradient(at bottom right, #000, transparent 70%);
         z-index: -1;
         pointer-events: none;
+    }
+
+    .contributors-container {
+        white-space: nowrap;
+        margin-bottom: 10px;
+        &:nth-child(odd) {
+            float: right;
+            animation: contributors-scroller-right 120s infinite linear;
+        }
+        &:nth-child(even) {
+            float: left;
+            animation: contributors-scroller-left 120s infinite linear;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .contributor-card {
+        margin-right: 10px;
+        display: inline-flex;
+        align-items: center;
+        padding: 16px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
+    }
+
+    .contributor-avatar {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .contributor-info {
+        margin-left: 10px;
+        font-size: 12px;
+        color: var(--text-secondary);
+        h5 {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
     }
 
     :global(.theme-dark #background-canvas) {
