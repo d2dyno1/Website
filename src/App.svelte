@@ -250,11 +250,11 @@
         white-space: nowrap;
         margin-bottom: 10px;
         &:nth-child(odd) {
-            float: right;
+            float: left;
             animation: contributors-scroller-right 120s infinite linear;
         }
         &:nth-child(even) {
-            float: left;
+            float: right;
             animation: contributors-scroller-left 120s infinite linear;
         }
         &:last-child {

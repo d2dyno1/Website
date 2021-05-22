@@ -3673,7 +3673,7 @@ var app = (function () {
     			attr_dev(canvas_1, "width", "32");
     			attr_dev(canvas_1, "height", "32");
     			attr_dev(canvas_1, "id", "background-canvas");
-    			attr_dev(canvas_1, "class", "svelte-1mypnnk");
+    			attr_dev(canvas_1, "class", "svelte-10npseq");
     			add_location(canvas_1, file, 133, 16, 6464);
     		},
     		m: function mount(target, anchor) {
@@ -3907,16 +3907,16 @@ var app = (function () {
     			t4 = space();
     			t5 = text(t5_value);
     			t6 = space();
-    			attr_dev(img, "class", "contributor-avatar svelte-1mypnnk");
+    			attr_dev(img, "class", "contributor-avatar svelte-10npseq");
     			if (img.src !== (img_src_value = /*contributor*/ ctx[10].avatar_url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "" + (/*contributor*/ ctx[10].login + " avatar"));
     			add_location(img, file, 145, 24, 7098);
-    			attr_dev(h5, "class", "svelte-1mypnnk");
+    			attr_dev(h5, "class", "svelte-10npseq");
     			add_location(h5, file, 147, 28, 7277);
     			add_location(span, file, 148, 28, 7334);
-    			attr_dev(div0, "class", "contributor-info svelte-1mypnnk");
+    			attr_dev(div0, "class", "contributor-info svelte-10npseq");
     			add_location(div0, file, 146, 24, 7218);
-    			attr_dev(div1, "class", "contributor-card svelte-1mypnnk");
+    			attr_dev(div1, "class", "contributor-card svelte-10npseq");
     			add_location(div1, file, 144, 20, 7043);
     		},
     		m: function mount(target, anchor) {
@@ -4003,16 +4003,16 @@ var app = (function () {
     			t4 = space();
     			t5 = text(t5_value);
     			t6 = space();
-    			attr_dev(img, "class", "contributor-avatar svelte-1mypnnk");
+    			attr_dev(img, "class", "contributor-avatar svelte-10npseq");
     			if (img.src !== (img_src_value = /*contributor*/ ctx[10].avatar_url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "" + (/*contributor*/ ctx[10].login + " avatar"));
     			add_location(img, file, 156, 24, 7722);
-    			attr_dev(h5, "class", "svelte-1mypnnk");
+    			attr_dev(h5, "class", "svelte-10npseq");
     			add_location(h5, file, 158, 28, 7901);
     			add_location(span, file, 159, 28, 7958);
-    			attr_dev(div0, "class", "contributor-info svelte-1mypnnk");
+    			attr_dev(div0, "class", "contributor-info svelte-10npseq");
     			add_location(div0, file, 157, 24, 7842);
-    			attr_dev(div1, "class", "contributor-card svelte-1mypnnk");
+    			attr_dev(div1, "class", "contributor-card svelte-10npseq");
     			add_location(div1, file, 155, 20, 7667);
     		},
     		m: function mount(target, anchor) {
@@ -4099,16 +4099,16 @@ var app = (function () {
     			t4 = space();
     			t5 = text(t5_value);
     			t6 = space();
-    			attr_dev(img, "class", "contributor-avatar svelte-1mypnnk");
+    			attr_dev(img, "class", "contributor-avatar svelte-10npseq");
     			if (img.src !== (img_src_value = /*contributor*/ ctx[10].avatar_url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = "" + (/*contributor*/ ctx[10].login + " avatar"));
     			add_location(img, file, 167, 24, 8346);
-    			attr_dev(h5, "class", "svelte-1mypnnk");
+    			attr_dev(h5, "class", "svelte-10npseq");
     			add_location(h5, file, 169, 28, 8525);
     			add_location(span, file, 170, 28, 8582);
-    			attr_dev(div0, "class", "contributor-info svelte-1mypnnk");
+    			attr_dev(div0, "class", "contributor-info svelte-10npseq");
     			add_location(div0, file, 168, 24, 8466);
-    			attr_dev(div1, "class", "contributor-card svelte-1mypnnk");
+    			attr_dev(div1, "class", "contributor-card svelte-10npseq");
     			add_location(div1, file, 166, 20, 8291);
     		},
     		m: function mount(target, anchor) {
@@ -4239,11 +4239,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "contributors-container svelte-1mypnnk");
+    			attr_dev(div0, "class", "contributors-container svelte-10npseq");
     			add_location(div0, file, 142, 12, 6933);
-    			attr_dev(div1, "class", "contributors-container svelte-1mypnnk");
+    			attr_dev(div1, "class", "contributors-container svelte-10npseq");
     			add_location(div1, file, 153, 12, 7557);
-    			attr_dev(div2, "class", "contributors-container svelte-1mypnnk");
+    			attr_dev(div2, "class", "contributors-container svelte-10npseq");
     			add_location(div2, file, 164, 12, 8181);
     		},
     		m: function mount(target, anchor) {
