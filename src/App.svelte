@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    import { releaseEndpoint, contributorsEndpoint, storeId, githubUrl } from './stores';
-    import { Title, Subtext } from 'components/Text';
+    import { org, repo, storeId } from './stores';
+    import { Title, Subtext, Anchor } from 'components/Text';
     import { Flex } from 'components/Flex';
     import { Button } from 'components/Button';
     import { PageSection } from 'components/PageSection';
@@ -33,7 +33,7 @@
         });
     }
 
-    onMount(() => {
+    onMount(async () => {
 
         document.body.className = 'theme-light';
 
@@ -63,18 +63,16 @@
             window.requestAnimationFrame(run);
         }
         run();
-
+        
         // Fetch our release version
-        (async () => {
-            version = await getReleaseVersion($releaseEndpoint);
-        })();
+        version = await getReleaseVersion(`https://api.github.com/repos/${$org}/${$repo}/releases/latest`);
 
         // Fetch contributors
-        (async () => {
-            contributors1 = await getContributors(`${$contributorsEndpoint}&page=1`);
-            contributors2 = await getContributors(`${$contributorsEndpoint}&page=2`);
-            contributors3 = await getContributors(`${$contributorsEndpoint}&page=3`);
-        })();
+        const contributorsEndpoint = `https://api.github.com/repos/${$org}/${$repo}/contributors?per_page=35`;
+
+        contributors1 = await getContributors(`${contributorsEndpoint}&page=1`);
+        contributors2 = await getContributors(`${contributorsEndpoint}&page=2`);
+        contributors3 = await getContributors(`${contributorsEndpoint}&page=3`);
     });
 </script>
 
@@ -117,7 +115,7 @@
                                 </Flex>
                             </Flex>
                         </Button>
-                        <Button href={$githubUrl} target="_blank" custom>
+                        <Button href={`https://github.com/${$org}/${$repo}/`} target="_blank" custom>
                             <Flex gap align="center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="18" height="18">
                                     <path fill-rule="evenodd" fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
@@ -131,47 +129,55 @@
                     </Flex>
                 </Flex>
                 <AppSkeleton/>
-                <canvas width="32" height="32" bind:this={canvas} id="background-canvas"/>
             </Flex>
+            <canvas width="32" height="32" bind:this={canvas} id="background-canvas"/>
     </PageSection>
     <PageSection id="community-section">
         <Flex id="community-section-inner" align="center" justify="center" direction="column">
             <Title size={3} center>Community Driven</Title>
             <Subtext center>
-                Files is completely free and open source software maintained by the community.
+                Files is <Anchor href="https://github.com/files-community/Files/blob/main/LICENSE" target="_blank">free and open source</Anchor> software maintained and designed by the community.
             </Subtext>
             <div class="contributors-container">
-                {#each contributors1 as contributor}
-                    <div class="contributor-card">
-                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
-                        <div class="contributor-info">
-                            <h5>{contributor.login}</h5>
-                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
-                        </div>
-                    </div>
-                {/each}
-            </div>
-            <div class="contributors-container">
-                {#each contributors2 as contributor}
-                    <div class="contributor-card">
-                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
-                        <div class="contributor-info">
-                            <h5>{contributor.login}</h5>
-                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
-                        </div>
-                    </div>
-                {/each}
-            </div>
-            <div class="contributors-container">
-                {#each contributors3 as contributor}
-                    <div class="contributor-card">
-                        <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
-                        <div class="contributor-info">
-                            <h5>{contributor.login}</h5>
-                            <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
-                        </div>
-                    </div>
-                {/each}
+                <div class="contributors-row">
+                    {#each contributors1 as contributor}
+                        {#if !contributor.login.endsWith('[bot]')}
+                            <div class="contributor-card">
+                                <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                                <div class="contributor-info">
+                                    <h5>{contributor.login}</h5>
+                                    <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                                </div>
+                            </div>
+                        {/if}
+                    {/each}
+                </div>
+                <div class="contributors-row">
+                    {#each contributors2 as contributor}
+                        {#if !contributor.login.endsWith('[bot]')}
+                            <div class="contributor-card">
+                                <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                                <div class="contributor-info">
+                                    <h5>{contributor.login}</h5>
+                                    <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                                </div>
+                            </div>
+                        {/if}
+                    {/each}
+                </div>
+                <div class="contributors-row">
+                    {#each contributors3 as contributor}
+                        {#if !contributor.login.endsWith('[bot]')}
+                            <div class="contributor-card">
+                                <img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
+                                <div class="contributor-info">
+                                    <h5>{contributor.login}</h5>
+                                    <span>{contributor.contributions} {(contributor.contributions > 1) ? 'Contributions' : 'Contribution'}</span>
+                                </div>
+                            </div>
+                        {/if}
+                    {/each}
+                </div>
             </div>
         </Flex>
     </PageSection>
@@ -218,6 +224,7 @@
             overflow: hidden;
             background: var(--background-primary);
             .subtext {
+                margin-top: 4px;
                 margin-bottom: 24px;
             }
         }
@@ -247,18 +254,45 @@
     }
 
     .contributors-container {
+        max-width: 1800px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .contributors-row {
         white-space: nowrap;
         margin-bottom: 10px;
         &:nth-child(odd) {
-            float: left;
-            animation: contributors-scroller-right 120s infinite linear;
+            float: right;
+            animation: contributors-scroller-right 60.5s linear infinite;
         }
         &:nth-child(even) {
-            float: right;
-            animation: contributors-scroller-left 120s infinite linear;
+            float: left;
+            animation: contributors-scroller-left 60.5s linear infinite;
         }
         &:last-child {
             margin: 0;
+        }
+    }
+
+    @media screen and (min-width: 1800px) {
+        .contributors-container {
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100px;
+                z-index: 1;
+            }
+            &::before {
+                background-image: linear-gradient(90deg, var(--background-primary), transparent);
+            }
+            &::after {
+                right: 0;
+                background-image: linear-gradient(90deg, transparent, var(--background-primary));
+            }
         }
     }
 

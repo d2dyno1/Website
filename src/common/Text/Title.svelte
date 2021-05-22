@@ -27,19 +27,21 @@
         margin: 0;
         color: var(--text-primary);
         font-weight: 800;
-        line-height: 1.4;
         &.text-center {
             text-align: center;
         }
         &.size- {
             &1 {
                 font-size: 72px;
+                line-height: 1.4;
             }
             &2 {
                 font-size: 64px;
+                line-height: 1.3;
             }
             &3 {
                 font-size: 56px;
+                line-height: 1.2;
             }
         }
     }
