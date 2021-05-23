@@ -1,22 +1,93 @@
 <script>
-    import { onMount } from 'svelte';
-    import { org, repo } from './stores';
     import { Flex } from 'components/Flex';
 
-    let files = {};
-
-    async function getRepoFiles(endpoint) {
-        return await fetch(endpoint).then(result => result.json()).then(result => {
-            return result;
-        }).catch(err => {
-            console.error(err);
-            return '';
-        });
-    }
-
-    onMount(async () => {
-        files = await getRepoFiles(`https://api.github.com/repos/${$org}/${$repo}/git/trees/main`);
-    })
+    const files = [
+        {
+            name: '.github',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: '17 days ago'
+        },
+        {
+            name: 'Common',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: 'last month'
+        },
+        {
+            name: 'Files.Launcher',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: '3 days ago'
+        },
+        {
+            name: 'Files.Package',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: '2 months ago'
+        },
+        {
+            name: 'Files',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: 'yesterday'
+        },
+        {
+            name: 'builds',
+            type: 'File Folder',
+            icon: 'folder',
+            modified: '25 days ago'
+        },
+        {
+            name: '.gitattributes',
+            type: 'GITATTRIBUTES File',
+            icon: 'file',
+            modified: '3 years ago',
+            size: '2.46 KB'
+        },
+        {
+            name: '.gitignore',
+            type: 'GITIGNORE File',
+            icon: 'file',
+            modified: '3 months ago',
+            size: '5.47 KB'
+        },
+        {
+            name: 'CODE_OF_CONDUCT.md',
+            type: 'MD File',
+            icon: 'text',
+            modified: '2 months ago',
+            size: '6.16 KB'
+        },
+        {
+            name: 'Files.sln',
+            type: 'Visual Studio Solution',
+            icon: 'file',
+            modified: '2 months ago',
+            size: '8.7 KB'
+        },
+        {
+            name: 'LICENSE',
+            type: 'File',
+            icon: 'file',
+            modified: '5 months ago',
+            size: '34.3 KB'
+        },
+        {
+            name: 'Privacy.md',
+            type: 'MD File',
+            icon: 'text',
+            modified: '5 months ago',
+            size: '332 B'
+        },
+        {
+            name: 'README.md',
+            type: 'MD File',
+            icon: 'text',
+            modified: '25 days ago',
+            size: '2.28 KB'
+        }
+    ];
 </script>
 
 <template>
@@ -44,7 +115,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                                 <path d="M5.25 3C3.45507 3 2 4.45507 2 6.25V21.75C2 23.5449 3.45507 25 5.25 25H12.01V27.0013L9.01196 27.0013C8.45967 27.0013 8.01196 27.4488 8.01196 28.0007C8.01197 28.5526 8.45969 29 9.01197 29L23.0043 28.9999C23.5565 28.9999 24.0042 28.5525 24.0042 28.0005C24.0042 27.4486 23.5565 27.0012 23.0042 27.0012L20.0059 27.0012V25H26.75C28.5449 25 30 23.5449 30 21.75V6.25C30 4.45507 28.5449 3 26.75 3H5.25ZM18.0059 25V27.0013L14.01 27.0013V25H18.0059ZM4 6.25C4 5.55964 4.55964 5 5.25 5H26.75C27.4404 5 28 5.55964 28 6.25V21.75C28 22.4404 27.4404 23 26.75 23H5.25C4.55964 23 4 22.4404 4 21.75V6.25Z" fill="currentColor"/>
                             </svg>
-                            Desktop
+                            Preview
                         </div>
                         <div class="tab">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -99,14 +170,37 @@
                         </button>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M8.75 8C6.12665 8 4 10.1266 4 12.75V35.25C4 37.8734 6.12665 40 8.75 40H39.25C41.8734 40 44 37.8734 44 35.25V12.75C44 10.1266 41.8734 8 39.25 8H8.75ZM6.5 12.75C6.5 11.5074 7.50736 10.5 8.75 10.5H29V37.5H8.75C7.50736 37.5 6.5 36.4926 6.5 35.25V12.75ZM31.5 37.5V10.5H39.25C40.4926 10.5 41.5 11.5074 41.5 12.75V35.25C41.5 36.4926 40.4926 37.5 39.25 37.5H31.5Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                                 <path d="M15.752 24C15.752 25.7949 14.2969 27.25 12.502 27.25C10.707 27.25 9.25195 25.7949 9.25195 24C9.25195 22.2051 10.707 20.75 12.502 20.75C14.2969 20.75 15.752 22.2051 15.752 24Z M27.252 24C27.252 25.7949 25.7969 27.25 24.002 27.25C22.207 27.25 20.752 25.7949 20.752 24C20.752 22.2051 22.207 20.75 24.002 20.75C25.7969 20.75 27.252 22.2051 27.252 24Z M35.502 27.25C37.2969 27.25 38.752 25.7949 38.752 24C38.752 22.2051 37.2969 20.75 35.502 20.75C33.707 20.75 32.252 22.2051 32.252 24C32.252 25.7949 33.707 27.25 35.502 27.25Z" fill="currentColor"/>
                             </svg>
                         </button>
                     </Flex>
                 </header>
-                <article class="filesystem">
-                    <header class="filesystem-header"></header>
-                    {JSON.stringify(files)}
+                <article class="files-view">
+                    <table class="files-table">
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Date Modified</th>
+                            <th>Type</th>
+                            <th>Size</th>
+                        </tr>
+                        {#each files as file}
+                            <tr tabindex="0">
+                                <td>
+                                    <img src="./icons/{file.icon ?? 'file'}.ico" alt="{file.icon} icon" />
+                                </td>
+                                <td>{file.name}</td>
+                                <td>{file.modified}</td>
+                                <td>{file.type}</td>
+                                <td>{file.size ?? ''}</td>
+                            </tr>
+                        {/each}
+                      </table>
                 </article>
             </main>
         </Flex>
@@ -133,9 +227,11 @@
             font-family: 'Segoe UI', sans-serif;
         }
         :global {
+            #app-skeleton-navigation-container {
+                gap: 6px;
+            }
             #app-skeleton-navigation-container,
             #app-skeleton-options-container {
-                gap: 6px;
                 padding: 4px 8px;
             }
             #app-skeleton-options-container {
@@ -238,6 +334,8 @@
         }
     }
     .app-content {
+        display: flex;
+        flex-direction: column;
         flex: 1 1 auto;
         background-color: #f3f3f3;
         height: 100%;
@@ -268,6 +366,7 @@
         }
     }
     .app-content-header {
+        flex: 0 0 auto;
         background-color: #eeeeee;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.085);
         nav {
@@ -326,7 +425,52 @@
             }
         }
     }
-    .filesystem {
-        padding: 0 15px;
+    .files-view {
+        flex: 1 1 auto;
+        padding: 0 12px;
+        overflow: auto;
+    }
+    .files-table {
+        border-collapse: collapse;
+        width: 724px;
+        th {
+            border-bottom: 1px solid #edebe9;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            height: 45px;
+            &:first-child {
+                width: 55px;
+            }
+        }
+        td, th {
+            padding: 0 16px;
+        }
+        tr:hover td,
+        th:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        th:active {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        tr:focus {
+            background: #61a9e0;
+            &:hover td {
+                background: #3191da;
+            }
+        }
+        td {
+            height: 40px;
+            &:first-child {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                width: 24px;
+                height: auto;
+            }
+        }
     }
 </style>
