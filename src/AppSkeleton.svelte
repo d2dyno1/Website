@@ -182,24 +182,28 @@
                 </header>
                 <article class="files-view">
                     <table class="files-table">
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Date Modified</th>
-                            <th>Type</th>
-                            <th>Size</th>
-                        </tr>
-                        {#each files as file}
-                            <tr tabindex="0">
-                                <td>
-                                    <img src="./icons/{file.icon ?? 'file'}.ico" alt="{file.icon} icon" />
-                                </td>
-                                <td>{file.name}</td>
-                                <td>{file.modified}</td>
-                                <td>{file.type}</td>
-                                <td>{file.size ?? ''}</td>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Date Modified</th>
+                                <th>Type</th>
+                                <th>Size</th>
                             </tr>
-                        {/each}
+                        </thead>
+                        <tbody>
+                            {#each files as file}
+                                <tr tabindex="0">
+                                    <td>
+                                        <img src="./icons/{file.icon ?? 'file'}.ico" alt="{file.icon} icon" />
+                                    </td>
+                                    <td>{file.name}</td>
+                                    <td>{file.modified}</td>
+                                    <td>{file.type}</td>
+                                    <td>{file.size ?? ''}</td>
+                                </tr>
+                            {/each}
+                        </tbody>
                       </table>
                 </article>
             </main>
@@ -434,7 +438,10 @@
         border-collapse: collapse;
         width: 724px;
         th {
-            border-bottom: 1px solid #edebe9;
+            position: sticky;
+            top: 0;
+            background-color: #f1f1f1;
+            box-shadow: inset 0 -1px 0 #edebe9;
             font-size: 16px;
             font-weight: 600;
             text-align: left;

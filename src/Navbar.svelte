@@ -67,7 +67,8 @@
         &:hover {
             opacity: .75;
         }
-        &.selected {
+        &.selected,
+        &:focus-visible {
             opacity: 1;
         }
     }
