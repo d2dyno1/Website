@@ -538,12 +538,12 @@ var app = (function () {
     			h3 = element("h3");
     			if (default_slot) default_slot.c();
 
-    			attr_dev(h3, "class", h3_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			attr_dev(h3, "class", h3_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo");
 
     			toggle_class(h3, "text-center", /*center*/ ctx[0]);
-    			add_location(h3, file$8, 18, 8, 569);
+    			add_location(h3, file$8, 18, 8, 561);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -561,7 +561,7 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*size*/ 2 && h3_class_value !== (h3_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			if (!current || dirty & /*size*/ 2 && h3_class_value !== (h3_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo")) {
     				attr_dev(h3, "class", h3_class_value);
@@ -610,12 +610,12 @@ var app = (function () {
     			h2 = element("h2");
     			if (default_slot) default_slot.c();
 
-    			attr_dev(h2, "class", h2_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			attr_dev(h2, "class", h2_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo");
 
     			toggle_class(h2, "text-center", /*center*/ ctx[0]);
-    			add_location(h2, file$8, 14, 8, 394);
+    			add_location(h2, file$8, 14, 8, 390);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -633,7 +633,7 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*size*/ 2 && h2_class_value !== (h2_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			if (!current || dirty & /*size*/ 2 && h2_class_value !== (h2_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo")) {
     				attr_dev(h2, "class", h2_class_value);
@@ -682,7 +682,7 @@ var app = (function () {
     			h1 = element("h1");
     			if (default_slot) default_slot.c();
 
-    			attr_dev(h1, "class", h1_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			attr_dev(h1, "class", h1_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo");
 
@@ -705,7 +705,7 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*size*/ 2 && h1_class_value !== (h1_class_value = "title " + (/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1]) > -1
+    			if (!current || dirty & /*size*/ 2 && h1_class_value !== (h1_class_value = "title " + (~/*sizes*/ ctx[2].indexOf(/*size*/ ctx[1])
     			? `size-${/*size*/ ctx[1]}`
     			: "size-1") + " svelte-w6bkvo")) {
     				attr_dev(h1, "class", h1_class_value);
@@ -1182,11 +1182,11 @@ var app = (function () {
     			div = element("div");
     			if (default_slot) default_slot.c();
 
-    			attr_dev(div, "class", div_class_value = "flex-container\r\n                " + (/*directions*/ ctx[8].indexOf(/*direction*/ ctx[1]) > -1
+    			attr_dev(div, "class", div_class_value = "flex-container\r\n                " + (~/*directions*/ ctx[8].indexOf(/*direction*/ ctx[1])
     			? `direction-${/*direction*/ ctx[1]}`
-    			: "") + "\r\n                " + (/*alignments*/ ctx[9].indexOf(/*align*/ ctx[2]) > -1
+    			: "") + "\r\n                " + (~/*alignments*/ ctx[9].indexOf(/*align*/ ctx[2])
     			? `align-${/*align*/ ctx[2]}`
-    			: "") + "\r\n                " + (/*alignments*/ ctx[9].indexOf(/*justify*/ ctx[3]) > -1
+    			: "") + "\r\n                " + (~/*alignments*/ ctx[9].indexOf(/*justify*/ ctx[3])
     			? `justify-${/*justify*/ ctx[3]}`
     			: "") + "\r\n                " + (/*$$props*/ ctx[10].class
     			? /*$$props*/ ctx[10].class
@@ -1218,11 +1218,11 @@ var app = (function () {
     				}
     			}
 
-    			if (!current || dirty & /*direction, align, justify, $$props*/ 1038 && div_class_value !== (div_class_value = "flex-container\r\n                " + (/*directions*/ ctx[8].indexOf(/*direction*/ ctx[1]) > -1
+    			if (!current || dirty & /*direction, align, justify, $$props*/ 1038 && div_class_value !== (div_class_value = "flex-container\r\n                " + (~/*directions*/ ctx[8].indexOf(/*direction*/ ctx[1])
     			? `direction-${/*direction*/ ctx[1]}`
-    			: "") + "\r\n                " + (/*alignments*/ ctx[9].indexOf(/*align*/ ctx[2]) > -1
+    			: "") + "\r\n                " + (~/*alignments*/ ctx[9].indexOf(/*align*/ ctx[2])
     			? `align-${/*align*/ ctx[2]}`
-    			: "") + "\r\n                " + (/*alignments*/ ctx[9].indexOf(/*justify*/ ctx[3]) > -1
+    			: "") + "\r\n                " + (~/*alignments*/ ctx[9].indexOf(/*justify*/ ctx[3])
     			? `justify-${/*justify*/ ctx[3]}`
     			: "") + "\r\n                " + (/*$$props*/ ctx[10].class
     			? /*$$props*/ ctx[10].class
@@ -1468,7 +1468,7 @@ var app = (function () {
     			a = element("a");
     			if_block.c();
 
-    			attr_dev(a, "class", a_class_value = "button " + (/*types*/ ctx[6].indexOf(/*type*/ ctx[0]) > -1
+    			attr_dev(a, "class", a_class_value = "button " + (~/*types*/ ctx[6].indexOf(/*type*/ ctx[0])
     			? `type-${/*type*/ ctx[0]}`
     			: "type-secondary") + " svelte-z9ut62");
 
@@ -1483,7 +1483,7 @@ var app = (function () {
     			attr_dev(a, "href", /*href*/ ctx[3]);
     			attr_dev(a, "id", /*id*/ ctx[2]);
     			attr_dev(a, "disabled", /*disabled*/ ctx[5]);
-    			add_location(a, file$4, 22, 4, 584);
+    			add_location(a, file$4, 22, 4, 580);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1517,7 +1517,7 @@ var app = (function () {
     				if_block.m(a, null);
     			}
 
-    			if (!current || dirty & /*type*/ 1 && a_class_value !== (a_class_value = "button " + (/*types*/ ctx[6].indexOf(/*type*/ ctx[0]) > -1
+    			if (!current || dirty & /*type*/ 1 && a_class_value !== (a_class_value = "button " + (~/*types*/ ctx[6].indexOf(/*type*/ ctx[0])
     			? `type-${/*type*/ ctx[0]}`
     			: "type-secondary") + " svelte-z9ut62")) {
     				attr_dev(a, "class", a_class_value);
@@ -1594,7 +1594,7 @@ var app = (function () {
     			button = element("button");
     			if_block.c();
 
-    			attr_dev(button, "class", button_class_value = "button " + (/*types*/ ctx[6].indexOf(/*type*/ ctx[0]) > -1
+    			attr_dev(button, "class", button_class_value = "button " + (~/*types*/ ctx[6].indexOf(/*type*/ ctx[0])
     			? `type-${/*type*/ ctx[0]}`
     			: "type-secondary") + " svelte-z9ut62");
 
@@ -1635,7 +1635,7 @@ var app = (function () {
     				if_block.m(button, null);
     			}
 
-    			if (!current || dirty & /*type*/ 1 && button_class_value !== (button_class_value = "button " + (/*types*/ ctx[6].indexOf(/*type*/ ctx[0]) > -1
+    			if (!current || dirty & /*type*/ 1 && button_class_value !== (button_class_value = "button " + (~/*types*/ ctx[6].indexOf(/*type*/ ctx[0])
     			? `type-${/*type*/ ctx[0]}`
     			: "type-secondary") + " svelte-z9ut62")) {
     				attr_dev(button, "class", button_class_value);
@@ -1687,7 +1687,7 @@ var app = (function () {
     			span = element("span");
     			if (default_slot) default_slot.c();
     			attr_dev(span, "class", "svelte-z9ut62");
-    			add_location(span, file$4, 26, 12, 910);
+    			add_location(span, file$4, 26, 12, 902);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -1792,7 +1792,7 @@ var app = (function () {
     			span = element("span");
     			if (default_slot) default_slot.c();
     			attr_dev(span, "class", "svelte-z9ut62");
-    			add_location(span, file$4, 16, 12, 487);
+    			add_location(span, file$4, 16, 12, 483);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
