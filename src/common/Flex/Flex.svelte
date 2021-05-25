@@ -14,9 +14,9 @@
 
 <template>
     <div class="flex-container
-                {(~directions.indexOf(direction)) ? `direction-${direction}` : ''}
-                {(~alignments.indexOf(align)) ? `align-${align}` : ''}
-                {(~alignments.indexOf(justify)) ? `justify-${justify}` : ''}
+                {(directions.includes(direction)) ? `direction-${direction}` : ''}
+                {(alignments.includes(align)) ? `align-${align}` : ''}
+                {(alignments.includes(justify)) ? `justify-${justify}` : ''}
                 {($$props.class) ? $$props.class : ''}"
                 class:wrap
                 class:inline
