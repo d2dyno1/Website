@@ -13,7 +13,11 @@
             </a>
             <div class="navbar-divider" role="separator"></div>
             {#each items as item, i}
-                <a class="navbar-item" class:selected={selectedItem === i} href={item.href} target={(item.external === true) ? '_blank' : undefined} rel={(item.external === true) ? 'noreferrer noopener' : undefined}>
+                <a class="navbar-item"
+                   class:selected={selectedItem === i}
+                   href={item.href}
+                   target={(item.external === true) ? '_blank' : undefined} 
+                   rel={(item.external === true) ? 'noreferrer noopener' : undefined}>
                     {item.name}
                 </a>
             {/each}

@@ -32,6 +32,7 @@
 
     onMount(async () => {
 
+        // temporary thing to test theming. once a proper theme system is added this can be removed
         document.body.className = 'theme-light';
 
         // Canvas

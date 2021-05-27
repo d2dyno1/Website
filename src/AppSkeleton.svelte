@@ -1,6 +1,15 @@
 <script>
     import { Flex } from 'components';
 
+    /*
+     * Currently, there's a lot of boilerplate here, and the code behind it is a bit messy.
+     * ==================================================================================
+     * I plan to redo some things and maybe split the skeleton itself into subcomponents,
+     * but the design of Files v2 is constantly changing, so it would be difficult to keep 
+     * up, so i'll probably wait until a more finalized design is decided on before finishing
+     * the skeleton.
+     */
+
     const files = [
         {
             name: '.github',
