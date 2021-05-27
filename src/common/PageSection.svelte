@@ -1,16 +1,14 @@
-<script>
-    export let id = undefined;
+<script lang="ts">
+  export let id: string;
 </script>
 
-<template>
-    <section {id} class="page-section">
-        <slot/>
-    </section>
-</template>
+<section class="page-section" {id}>
+  <slot />
+</section>
 
 <style lang="scss">
-    .page-section {
-        position: relative;
-        padding: 72px;
-    }
+	.page-section {
+		position: relative;
+		padding: 72px;
+	}
 </style>
