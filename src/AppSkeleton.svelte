@@ -1,5 +1,5 @@
 <script>
-    import { Flex } from 'components/Flex';
+    import { Flex } from 'components';
 
     const files = [
         {

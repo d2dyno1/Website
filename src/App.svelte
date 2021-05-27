@@ -1,10 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { org, repo, storeId } from './stores';
-    import { Title, Subtext, Anchor } from 'components/Text';
-    import { Flex } from 'components/Flex';
-    import { Button } from 'components/Button';
-    import { PageSection } from 'components/PageSection';
+    import { Title, Subtext, Anchor, Flex, Button, PageSection } from 'components';
 
     import Navbar from './Navbar.svelte';
     import AppSkeleton from './AppSkeleton.svelte';
