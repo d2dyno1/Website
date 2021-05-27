@@ -11,7 +11,7 @@
 		<a href="/" id="navbar-logo-link">
 			<img alt="Files logo" id="navbar-logo" src="https://files-community.github.io/img/logo.png" />
 		</a>
-		<div id="navbar-divider" role="separator" />
+		<div id="navbar-divider" role="separator"></div>
 		{#each items as item, i}
 			<!--suppress HtmlUnknownTarget -->
 			<a
