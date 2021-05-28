@@ -30,17 +30,17 @@
 
 		&.size- {
 			&1 {
-				font-size: 72px;
+				font-size: 2em;
 				line-height: 1.4;
 			}
 
 			&2 {
-				font-size: 64px;
+				font-size: 1.5em;
 				line-height: 1.3;
 			}
 
 			&3 {
-				font-size: 56px;
+				font-size: 1.17em;
 				line-height: 1.2;
 			}
 		}

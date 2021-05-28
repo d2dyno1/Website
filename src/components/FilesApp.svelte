@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Flex from "./common/Flex.svelte";
-  import type { File } from "./utilTypes";
+  import Flex from "../common/Flex.svelte";
+  import type { File } from "../utilTypes";
   /*
    * Currently, there's a lot of boilerplate here, and the code behind it is a bit messy.
    * ==================================================================================
@@ -104,7 +104,7 @@
     <aside class="app-sidebar">
       <Flex align="center" id="app-skeleton-sidebar-header">
         <button class="sidebar-button">
-          <img alt="sidebar button" src="static/icons/sidebarButton.svg" />
+          <img alt="sidebar button" src="../../static/icons/sidebarButton.svg" />
         </button>
 
         <h5>Files</h5>

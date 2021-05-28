@@ -1,8 +1,29 @@
 <script lang="ts">
-	import Button from "./common/Button.svelte";
-	import type { Item } from "./utilTypes";
+	import Button from "../common/Button.svelte";
+	import type { Item } from "../utilTypes";
+	import { org, repo } from "../stores";
 
-	export let items: Item[] = [];
+	const items: Item[] = [
+		{
+			name: "Home",
+			href: "/"
+		},
+		{
+			name: "Docs",
+			href: "/",
+			external: true
+		},
+		{
+			name: "Discord",
+			href: "/",
+			external: true
+		},
+		{
+			name: "GitHub",
+			href: `https://github.com/${ org }/${ repo }/`,
+			external: true
+		}
+	];
 	export let selectedItem: Item;
 </script>
 
@@ -26,7 +47,7 @@
 		{/each}
 	</nav>
 	<Button custom id="theme-button">
-		<img alt="theme switch button" src="static/icons/themeButton.svg" />
+		<img alt="theme switch button" src="../../static/icons/themeButton.svg" />
 	</Button>
 </header>
 
