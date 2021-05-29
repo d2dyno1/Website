@@ -14,7 +14,7 @@
 		}
 		line-height: 1.4;
 		margin: 0;
-		color: var(--text-secondary);
+		color: #6f6f6f;
 
 		&.text-center { text-align: center }
 	}

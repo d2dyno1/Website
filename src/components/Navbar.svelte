@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte";
-	import type { Item } from "../utilTypes";
-	import { org, repo } from "../stores";
+	import Button from "../common/Button.svelte"
+	import type { Item } from "../utilTypes"
+	import { org, repo } from "../stores"
 
 	const items: Item[] = [
 		{
@@ -15,7 +15,7 @@
 		},
 		{
 			name: "Discord",
-			href: "/",
+			href: "https://discord.gg/files",
 			external: true
 		},
 		{

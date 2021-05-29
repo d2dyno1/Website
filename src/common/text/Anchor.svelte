@@ -12,7 +12,7 @@
 	.anchor {
 		font-weight: 500;
 		text-decoration: none;
-		color: var(--accent);
+		color: #0078d4;
 
 		&:hover {
 			text-decoration: underline;

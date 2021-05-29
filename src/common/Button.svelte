@@ -1,41 +1,39 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import type { ButtonType } from "../utilTypes"
 
-	export let type: ButtonType = "secondary";
-	export let custom = false;
-	export let id: string;
-	export let href: string;
-	export let target = undefined;
-	export let disabled: boolean;
-
-	type ButtonType = "primary" | "secondary";
+	export let type: ButtonType = "secondary"
+	export let custom = false
+	export let id: string
+	export let href: string
+	export let target = undefined
+	export let disabled: boolean
 </script>
 
 {#if !href}
-	<button class="type-{type}" {id} {disabled}>
+	<button class="button {type}" {id} {disabled}>
 		{#if custom}
-			<slot />
+			<slot/>
 		{:else}
-			<span><slot /></span>
+			<span><slot/></span>
 		{/if}
 	</button>
 {:else}
-	<button
-		on:click={() => (target === "_blank" ? window.open(href) : goto(href))}
-		class="type-{type}"
-		{id}
-		{disabled}
-	>
+	<a class="button {type}" type="button" role="button"
+	   target={target === '_blank' ? target : undefined}
+	   rel={target === '_blank' ? 'noreferrer noopener' : undefined}
+	   {href} {id} {disabled}>
 		{#if custom}
-			<slot />
+			<slot/>
 		{:else}
-			<span><slot /></span>
+			<span><slot/></span>
 		{/if}
-	</button>
+	</a>
 {/if}
 
 <style lang="scss">
-	button {
+	@use "static/global" as styles;
+
+	.button {
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 20px;
@@ -60,35 +58,29 @@
 			flex-direction: column;
 		}
 
-		&.type- {
-			&secondary {
-				color: var(--text-primary);
-				background-color: rgba(255, 255, 255, 0.7);
-				box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
+		&.secondary {
+			color: #141414;
+			background-color: rgba(255, 255, 255, 0.7);
+			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
 
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.5);
-				}
-
-				&:active {
-					color: rgba(0, 0, 0, 0.62);
-					background-color: rgba(255, 255, 255, 0.3);
-				}
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.5);
 			}
 
-			&primary {
-				color: #fff;
-				background-color: var(--accent);
-				box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.22);
-
-				&:hover {
-					background-color: var(--accent-hover);
-				}
-
-				&:active {
-					background-color: var(--accent-active);
-				}
+			&:active {
+				color: rgba(0, 0, 0, 0.62);
+				background-color: rgba(255, 255, 255, 0.3);
 			}
+		}
+
+		&.primary {
+			color: #fff;
+			background-color: #0078d4;
+			box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.22);
+
+			&:hover { background-color: #005ca3 }
+
+			&:active { background-color: #006bbd }
 		}
 
 		&[disabled] {
