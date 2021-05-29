@@ -33,8 +33,7 @@
 	}
 
 	#community-section {
-		overflow: hidden;
-		background: var(--background-primary);
+		background: #fff;
 
 		.subtext {
 			margin-top: 4px;
@@ -55,12 +54,12 @@
 			}
 
 			&::before {
-				background-image: linear-gradient(90deg, var(--background-primary), transparent);
+				background-image: linear-gradient(90deg, #fff, transparent);
 			}
 
 			&::after {
 				right: 0;
-				background-image: linear-gradient(90deg, transparent, var(--background-primary));
+				background-image: linear-gradient(90deg, transparent, #fff);
 			}
 		}
 	}
