@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let id: string;
+	export let id: string;
 </script>
 
 <section class="page-section" {id}>
-  <slot />
+	<slot />
 </section>
 
 <style lang="scss">

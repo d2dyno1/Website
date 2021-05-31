@@ -1,34 +1,34 @@
 <script lang="ts">
-  export let center = false;
-  export let size: TitleSize = 1;
+	export let center = false;
+	export let size: TitleSize = 1;
 
-  type TitleSize = 1 | 2 | 3 | 4 | 5 | 6
+	type TitleSize = 1 | 2 | 3 | 4 | 5 | 6
 </script>
 
 <!-- for some reason svelte doesn't have dynamic tag support yet -->
 {#if size === 1}
 	<h1 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h1>
 {:else if size === 2}
 	<h2 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h2>
 {:else if size === 3}
 	<h3 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h3>
 {:else if size === 4}
 	<h4 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h4>
 {:else if size === 5}
 	<h5 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h5>
 {:else if size === 6}
 	<h6 class="title" class:text-center={center}>
-		<slot/>
+		<slot />
 	</h6>
 {/if}
 

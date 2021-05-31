@@ -1,11 +1,11 @@
 <script lang="ts">
 	// Fetch contributors
-	import type { Contributor } from "../utilTypes"
-	import { getContributors } from "../routes/fetchHomepageData"
+	import type { Contributor } from "../utilTypes";
+	import { getContributors } from "../routes/fetchHomepageData";
 
-	export let pageNumber = 1
+	export let pageNumber = 1;
 
-	let contributors: Promise<Contributor[]> = getContributors(pageNumber)
+	let contributors: Promise<Contributor[]> = getContributors(pageNumber);
 </script>
 
 <div class="contributors-row">
@@ -22,8 +22,9 @@
 			{#if !contributor.login.endsWith("[bot]")}
 				<div class="contributor-card">
 					<!--suppress HtmlUnknownTarget -->
-					<img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
-					<div class="contributor-info" on:click={() => window.open(`https://github.com/${contributor.login}`)}>
+					<img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar" />
+					<div class="contributor-info"
+					     on:click={() => window.open(`https://github.com/${contributor.login}`)}>
 						<h5>{contributor.login}</h5>
 						<span>
 							{contributor.contributions} Contribution{contributor.contributions > 1 ? "s" : ""}

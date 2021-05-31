@@ -1,20 +1,20 @@
 <script lang="ts">
-  export let id = "";
-  export let direction: Direction = "";
-  export let align: Alignment = "";
-  export let justify: Alignment = "";
-  export let inline = false;
-  export let wrap = false;
-  export let reverse = false;
-  export let gap = false;
+	export let id = "";
+	export let direction: Direction = "";
+	export let align: Alignment = "";
+	export let justify: Alignment = "";
+	export let inline = false;
+	export let wrap = false;
+	export let reverse = false;
+	export let gap = false;
 
-  type Direction = "row" | "column" | "row-reverse" | "column-reverse" | ""
-  type Alignment = "center" | "start" | "end" | "between" | "around" | "evenly" | ""
+	type Direction = "row" | "column" | "row-reverse" | "column-reverse" | ""
+	type Alignment = "center" | "start" | "end" | "between" | "around" | "evenly" | ""
 </script>
 
 <div class={ `flex-container direction-${direction} align-${align} justify-${justify} ${$$props.class ?? ''}`}
      class:gap class:inline class:reverse class:wrap {id}>
-  <slot />
+	<slot />
 </div>
 
 <style lang="scss">

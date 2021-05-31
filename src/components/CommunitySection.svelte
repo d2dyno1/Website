@@ -1,10 +1,10 @@
 <script lang="ts">
-	import PageSection from "../common/PageSection.svelte"
-	import Flex from "../common/Flex.svelte"
-	import Title from "../common/text/Title.svelte"
-	import Subtext from "../common/text/Subtext.svelte"
-	import Anchor from "../common/text/Anchor.svelte"
-	import ContributorsRow from "./ContributorsRow.svelte"
+	import PageSection from "../common/PageSection.svelte";
+	import Flex from "../common/Flex.svelte";
+	import Title from "../common/text/Title.svelte";
+	import Subtext from "../common/text/Subtext.svelte";
+	import Anchor from "../common/text/Anchor.svelte";
+	import ContributorsRow from "./ContributorsRow.svelte";
 </script>
 
 <PageSection id="community-section">
@@ -18,9 +18,9 @@
 			software maintained and designed by the community.
 		</Subtext>
 		<div class="contributors-container">
-			<ContributorsRow pageNumber={1}/>
-			<ContributorsRow pageNumber={2}/>
-			<ContributorsRow pageNumber={3}/>
+			<ContributorsRow pageNumber={1} />
+			<ContributorsRow pageNumber={2} />
+			<ContributorsRow pageNumber={3} />
 		</div>
 	</Flex>
 </PageSection>
@@ -33,13 +33,14 @@
 	}
 
 	#community-section {
-		background: #fff;
+			margin: 20px;
+			background: #fff;
 
-		.subtext {
-			margin-top: 4px;
-			margin-bottom: 24px;
+			.subtext {
+				margin-top: 4px;
+				margin-bottom: 24px;
+			}
 		}
-	}
 
 	@media screen and (min-width: 1800px) {
 		.contributors-container {

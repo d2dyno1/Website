@@ -1,20 +1,20 @@
 <script lang="ts">
-	import type { ButtonType } from "../utilTypes"
+	import type { ButtonType } from "../utilTypes";
 
-	export let type: ButtonType = "secondary"
-	export let custom = false
-	export let id: string
-	export let href: string
-	export let target = undefined
-	export let disabled: boolean
+	export let type: ButtonType = "secondary";
+	export let custom = false;
+	export let id: string;
+	export let href: string;
+	export let target = undefined;
+	export let disabled: boolean;
 </script>
 
 {#if !href}
 	<button class="button {type}" {id} {disabled}>
 		{#if custom}
-			<slot/>
+			<slot />
 		{:else}
-			<span><slot/></span>
+			<span><slot /></span>
 		{/if}
 	</button>
 {:else}
@@ -23,9 +23,9 @@
 	   rel={target === '_blank' ? 'noreferrer noopener' : undefined}
 	   {href} {id} {disabled}>
 		{#if custom}
-			<slot/>
+			<slot />
 		{:else}
-			<span><slot/></span>
+			<span><slot /></span>
 		{/if}
 	</a>
 {/if}

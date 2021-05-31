@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte"
-	import Flex from "../common/Flex.svelte"
-	import type { ButtonType } from "../utilTypes"
+	import Button from "../common/Button.svelte";
+	import Flex from "../common/Flex.svelte";
+	import type { ButtonType } from "../utilTypes";
 
-	export let title: string
-	export let description: string
-	export let href: string
-	export let type: ButtonType
+	export let title: string;
+	export let description: string;
+	export let href: string;
+	export let type: ButtonType;
 </script>
 
 <Button custom {href} target="_blank" {type}>
 	<Flex align="center" gap>
-		<slot/>
+		<slot />
 
 		<Flex direction="column">
 			<a class="button-title">{title}</a>

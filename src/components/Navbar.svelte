@@ -1,28 +1,27 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte"
-	import type { Item } from "../utilTypes"
-	import { org, repo } from "../stores"
+	import Button from "../common/Button.svelte";
+	import type { Item } from "../utilTypes";
 
 	const items: Item[] = [
 		{
 			name: "Home",
-			href: "/"
+			href: "/",
 		},
 		{
 			name: "Docs",
 			href: "/",
-			external: true
+			external: true,
 		},
 		{
 			name: "Discord",
 			href: "https://discord.gg/files",
-			external: true
+			external: true,
 		},
 		{
 			name: "GitHub",
-			href: `https://github.com/${ org }/${ repo }/`,
-			external: true
-		}
+			href: `https://github.com/files-community/files/`,
+			external: true,
+		},
 	];
 	export let selectedItem: Item;
 </script>

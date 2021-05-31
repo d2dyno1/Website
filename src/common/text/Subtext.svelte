@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let center = false;
+	export let center = false;
 </script>
 
 <p class="subtext" class:text-center={center}>
-  <slot />
+	<slot />
 </p>
 
 <style lang="scss">
