@@ -45,7 +45,7 @@
 		{/each}
 	</nav>
 	<Button custom id="theme-button">
-		<img alt="theme switch button" src="../../static/icons/themeButton.svg"/>
+		<img alt="theme switch button" src="/icons/themeButton.svg"/>
 	</Button>
 </header>
 

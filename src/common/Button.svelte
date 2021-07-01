@@ -7,6 +7,7 @@
 	export let href: string
 	export let target = undefined
 	export let disabled: boolean
+	export let center = false
 </script>
 
 {#if !href}
@@ -64,7 +65,7 @@
 
 		&.secondary {
 			color: hsl(0, 0%, 8%);
-			background-color: hsla(0, 0%, 100%, 0.7);
+			background-color: darken(white, 10%);
 			box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.06), inset 0 -1px 0 hsla(0, 0%, 0%, 0.1);
 
 			&:hover {

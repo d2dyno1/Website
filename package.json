@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
+		"preview": "svelte-kit build && svelte-kit preview",
 		"lint": "prettier --check --plugin-search-dir=. files-site",
 		"format": "prettier --write --plugin-search-dir=. files-site"
 	},
