@@ -43,7 +43,7 @@
 		<Flex direction="column" id="main-left-container">
 			<div id="title">
 				<img alt="Files logo" height="72" src="/logo.svg"/>
-				<Title>Files</Title>
+				<Title bold="semibold">Files</Title>
 			</div>
 			<Subtext>A modern file explorer that pushes the boundaries of the platform.</Subtext>
 
@@ -113,8 +113,6 @@
 		display: flex;
 		align-items: center;
 		gap: 3%;
-
-		img { transform: translateY(-.25em) }
 	}
 
 	#background-canvas {
