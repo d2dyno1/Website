@@ -5,3 +5,6 @@ node_modules
 /functions
 /.idea
 /.vscode
+
+*.css.map
+*.js.map
