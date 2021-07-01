@@ -36,18 +36,22 @@
 	.button {
 		font-size: 14px;
 		font-weight: 400;
-		line-height: 20px;
-		display: inline-flex;
+		line-height: 1.2em;
+
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
+
 		max-width: 100%;
-		height: 32px;
-		padding: 0 10px;
+		height: 2.75em;
+		padding: 0 .75em 0 .5em;
+
 		cursor: pointer;
 		user-select: none;
+
 		transition: 100ms linear;
-		text-align: center;
+		text-align: left;
 		text-decoration: none;
 		border: none;
 		border-radius: 4px;

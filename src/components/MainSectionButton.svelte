@@ -11,7 +11,7 @@
 
 <Button custom {href} target="_blank" {type}>
 	<Flex align="center" gap>
-		<slot />
+		<slot/>
 
 		<Flex direction="column">
 			<span class="button-title">{title}</span>
@@ -22,21 +22,20 @@
 
 <style lang="scss">
 	.button {
-		line-height: 1.4;
-		justify-content: flex-start;
-		min-width: 150px;
+		//min-width: 150px;
 		height: 45px;
 		padding: 0 12px;
-		text-align: left;
-
-		& .button-title {
-			font-size: 12px;
-			font-weight: 600;
-		}
-
-		& .button-description {
-			font-size: 10px;
-			font-weight: 400;
-		}
+		//text-align: left;
 	}
+
+	.button-title {
+		font-size: 12px;
+		font-weight: 600;
+	}
+
+	.button-description {
+		font-size: 10px;
+		font-weight: 400;
+	}
+
 </style>

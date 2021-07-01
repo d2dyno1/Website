@@ -320,7 +320,7 @@
 		}
 	}
 
-	@media screen and (max-width: 1200px) {
+	@media screen and (max-width: 1100px) {
 		.files-app { display: none }
 	}
 
