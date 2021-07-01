@@ -113,6 +113,11 @@
 		display: flex;
 		align-items: center;
 		gap: 3%;
+
+		img {
+			user-select: none;
+			-webkit-user-drag: none;
+		}
 	}
 
 	#background-canvas {

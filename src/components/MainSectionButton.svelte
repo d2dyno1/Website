@@ -22,12 +22,12 @@
 
 <style lang="scss">
 	.button-title {
-		font-size: 12px;
+		font-size: 1.1em;
 		font-weight: 600;
 	}
 
 	.button-description {
-		font-size: 10px;
+		font-size: .9em;
 		font-weight: 400;
 	}
 

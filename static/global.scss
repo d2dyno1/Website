@@ -4,15 +4,21 @@
 //	background: linear-gradient(0deg, rgba(239, 239, 239, 0.3), rgba(239, 239, 239, 0.3)), rgba(239, 239, 239, 0.95) url("https://modernflyouts-community.github.io/assets/noise.png") center/196px repeat;
 //}
 
+:root {
+	--text-opsz: 16;
+}
+
 html,
 body {
+	font-family: "Segoe UI Variable Display", "Segoe UI", "Inter var", sans-serif;
 	position: relative;
+	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	font-family: "Segoe UI Variable", "Segoe UI", "Inter var", sans-serif;
-	box-sizing: border-box;
 	outline: none;
+	font-variation-settings: "opsz" var(--text-opsz);
+	font-optical-sizing: auto;
 }
 
 :focus-visible {

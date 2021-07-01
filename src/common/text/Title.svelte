@@ -39,6 +39,7 @@
 	.title {
 		margin: 0;
 		color: var(--text-primary);
+		--text-opsz: 32;
 
 		&.center { text-align: center }
 
