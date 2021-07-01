@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte";
-	import Flex from "../common/Flex.svelte";
-	import type { ButtonType } from "../utilTypes";
+	import Button from "../common/Button.svelte"
+	import Flex from "../common/Flex.svelte"
+	import type { ButtonType } from "../utilTypes"
 
-	export let title: string;
-	export let description: string;
-	export let href: string;
-	export let type: ButtonType;
+	export let title: string
+	export let description: string
+	export let href: string
+	export let type: ButtonType
 </script>
 
 <Button custom {href} target="_blank" {type}>
@@ -14,8 +14,8 @@
 		<slot />
 
 		<Flex direction="column">
-			<a class="button-title">{title}</a>
-			<a class="button-description">{description}</a>
+			<span class="button-title">{title}</span>
+			<span class="button-description">{description}</span>
 		</Flex>
 	</Flex>
 </Button>
@@ -28,15 +28,15 @@
 		height: 45px;
 		padding: 0 12px;
 		text-align: left;
-	}
 
-	.button-title {
-		font-size: 12px;
-		font-weight: 600;
-	}
+		& .button-title {
+			font-size: 12px;
+			font-weight: 600;
+		}
 
-	.button-description {
-		font-size: 10px;
-		font-weight: 400;
+		& .button-description {
+			font-size: 10px;
+			font-weight: 400;
+		}
 	}
 </style>

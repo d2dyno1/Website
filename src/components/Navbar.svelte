@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte";
-	import type { Item } from "../utilTypes";
+	import Button from "../common/Button.svelte"
+	import type { Item } from "../utilTypes"
 
 	const items: Item[] = [
 		{
@@ -22,31 +22,30 @@
 			href: `https://github.com/files-community/files/`,
 			external: true,
 		},
-	];
-	export let selectedItem: Item;
+	]
+	export let selectedItem: Item
 </script>
 
 <header id="navbar">
 	<nav>
 		<a href="/" id="navbar-logo-link">
-			<img alt="Files logo" id="navbar-logo" src="https://files-community.github.io/img/logo.png" />
+			<img alt="Files logo" id="navbar-logo" src="/logo.svg"/>
 		</a>
 		<div id="navbar-divider" role="separator"></div>
 		{#each items as item, i}
 			<!--suppress HtmlUnknownTarget -->
-			<a
-				class="navbar-item"
-				class:selected={selectedItem === i}
-				href={item.href}
-				target={item.external ? "_blank" : undefined}
-				rel={item.external ? "noreferrer noopener" : undefined}
+			<a class="navbar-item"
+			   class:selected={selectedItem === i}
+			   href={item.href}
+			   target={item.external ? "_blank" : undefined}
+			   rel={item.external ? "noreferrer noopener" : undefined}
 			>
 				{item.name}
 			</a>
 		{/each}
 	</nav>
 	<Button custom id="theme-button">
-		<img alt="theme switch button" src="../../static/icons/themeButton.svg" />
+		<img alt="theme switch button" src="../../static/icons/themeButton.svg"/>
 	</Button>
 </header>
 
@@ -75,6 +74,8 @@
 	#navbar-logo {
 		width: 48px;
 		height: 48px;
+		margin-top: .5em;
+		margin-left: 1em;
 		user-select: none;
 		-webkit-user-drag: none;
 	}

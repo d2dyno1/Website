@@ -36,6 +36,7 @@ body {
 .acrylic-material {
 	overflow: hidden;
 	backdrop-filter: blur(60px) saturate(5);
+	--webkit-backdrop-filter: blur(60px) saturate(5);
 
 	&::before {
 		position: absolute;
