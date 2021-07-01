@@ -39,7 +39,7 @@
 		font-weight: 400;
 		line-height: 1.2em;
 
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;

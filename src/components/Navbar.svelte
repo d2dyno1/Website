@@ -45,7 +45,12 @@
 		{/each}
 	</nav>
 	<Button custom id="theme-button">
-		<img alt="theme switch button" src="/icons/themeButton.svg"/>
+		<svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+			<path
+					d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20V4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20Z"
+					fill="currentColor"
+			/>
+		</svg>
 	</Button>
 </header>
 
@@ -60,11 +65,13 @@
 			display: flex;
 			align-items: center;
 		}
+	}
 
-		:global(#theme-button) {
-			width: 48px;
-			height: 48px;
-		}
+	:global(#theme-button) {
+		width: 3em;
+		height: 3em;
+		margin-right: 1em;
+		padding: 0;
 	}
 
 	#navbar-logo-link {
