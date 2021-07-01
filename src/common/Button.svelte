@@ -45,7 +45,7 @@
 
 		max-width: 100%;
 		height: 2.75em;
-		padding: 0 .75em 0 .5em;
+		padding: 1.6em 1.4em 1.6em .5em;
 
 		cursor: pointer;
 		user-select: none;

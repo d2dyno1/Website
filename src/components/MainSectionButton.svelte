@@ -21,13 +21,6 @@
 </Button>
 
 <style lang="scss">
-	.button {
-		//min-width: 150px;
-		height: 45px;
-		padding: 0 12px;
-		//text-align: left;
-	}
-
 	.button-title {
 		font-size: 12px;
 		font-weight: 600;
