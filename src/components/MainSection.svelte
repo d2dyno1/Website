@@ -41,10 +41,10 @@
 <PageSection id="main-section">
 	<Flex align="center" gap id="main-inner-container">
 		<Flex direction="column" id="main-left-container">
-			<Title>
-				<img alt="Files logo" height="56" src="/logo.svg"/>
-				Files
-			</Title>
+			<div id="title">
+				<img alt="Files logo" height="64" src="/logo.svg" style="vertical-align: .1rem"/>
+				<Title>Files</Title>
+			</div>
 			<Subtext>A modern file explorer that pushes the boundaries of the platform.</Subtext>
 
 			<Flex gap id="main-button-container" wrap>
@@ -107,6 +107,14 @@
 		max-height: 1000px;
 		padding: 32px 72px;
 		background: #f1f1f1;
+	}
+
+	#title {
+		display: flex;
+		align-items: center;
+		gap: 3%;
+
+		img { transform: translateY(-.1rem) }
 	}
 
 	#background-canvas {
