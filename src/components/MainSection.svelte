@@ -42,7 +42,7 @@
 	<Flex align="center" gap id="main-inner-container">
 		<Flex direction="column" id="main-left-container">
 			<div id="title">
-				<img alt="Files logo" height="64" src="/logo.svg" style="vertical-align: .1rem"/>
+				<img alt="Files logo" height="72" src="/logo.svg"/>
 				<Title>Files</Title>
 			</div>
 			<Subtext>A modern file explorer that pushes the boundaries of the platform.</Subtext>
@@ -114,7 +114,7 @@
 		align-items: center;
 		gap: 3%;
 
-		img { transform: translateY(-.1rem) }
+		img { transform: translateY(-.25em) }
 	}
 
 	#background-canvas {
