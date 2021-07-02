@@ -54,11 +54,19 @@
 		&:nth-child(odd) {
 			float: right;
 			animation: contributors-scroller-right 60.5s linear infinite;
+
+			@media (prefers-reduced-motion) {
+				animation: contributors-scroller-right 240s linear infinite;
+			}
 		}
 
 		&:nth-child(even) {
 			float: left;
 			animation: contributors-scroller-left 60.5s linear infinite;
+
+			@media (prefers-reduced-motion) {
+				animation: contributors-scroller-left 240s linear infinite;
+			}
 		}
 
 		&:last-child { margin: 0 }
@@ -82,17 +90,20 @@
 	}
 
 	.contributor-info {
-		font-size: .75em;
 		margin-left: 10px;
-		color: styles.$light-text-primary;
 
-		&:hover {
-			cursor: pointer;
+		span {
+			font-size: .8em;
+			color: styles.$light-text-primary;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		h5 {
 			font: {
-				size: 14px;
+				size: 1em;
 				weight: 600;
 			}
 			margin: 0;
