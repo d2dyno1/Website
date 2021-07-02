@@ -32,7 +32,7 @@
 {/if}
 
 <style lang="scss">
-	@use "static/global" as styles;
+	@use "static/colors";
 
 	.button {
 		font-size: 14px;
@@ -64,28 +64,28 @@
 		}
 
 		&.secondary {
-			color: styles.$light-text-primary;
-			background: styles.$light-background-secondary;
+			color: colors.$light-text-primary;
+			background: colors.$light-background-secondary;
 			box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.06), inset 0 -1px 0 hsla(0, 0%, 0%, 0.1);
 
 			&:hover {
-				background: darken(styles.$light-background-secondary, 10%);
+				background: darken(colors.$light-background-secondary, 10%);
 			}
 
 			&:active {
 				color: hsla(0, 0%, 0%, 0.62);
-				background: darken(styles.$light-background-secondary, 20%);
+				background: darken(colors.$light-background-secondary, 20%);
 			}
 		}
 
 		&.primary {
-			color: styles.$dark-text-primary;
-			background-color: styles.$accent;
+			color: colors.$dark-text-primary;
+			background-color: colors.$accent;
 			box-shadow: inset 0 -1px 0 hsla(0, 0%, 0%, 0.22);
 
-			&:hover { background-color: styles.$accent-hover }
+			&:hover { background-color: colors.$accent-hover }
 
-			&:active { background-color: styles.$accent-active }
+			&:active { background-color: colors.$accent-active }
 		}
 
 		&[disabled] {

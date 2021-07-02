@@ -96,19 +96,16 @@
 </PageSection>
 
 <style lang="scss">
-	@use "static/global" as styles;
+	@use "static/colors";
 
 	#main-section {
-		z-index: 1;
 		display: flex;
 		overflow: hidden;
 		flex-direction: column;
 		justify-content: center;
-		height: 100vh;
-		min-height: 724px;
-		max-height: 1000px;
-		padding: 32px 72px;
-		background: styles.$light-background-secondary;
+		height: clamp(724px, 100vh, 1000px);
+		padding: 2rem 4.5rem;
+		background: colors.$light-background-secondary;
 	}
 
 	#title {

@@ -45,12 +45,12 @@
 			}
 
 			&::before {
-				background-image: linear-gradient(90deg, #fff, transparent);
+				background-image: linear-gradient(90deg, white, transparent);
 			}
 
 			&::after {
 				right: 0;
-				background-image: linear-gradient(90deg, transparent, #fff);
+				background-image: linear-gradient(90deg, transparent, white);
 			}
 		}
 	}

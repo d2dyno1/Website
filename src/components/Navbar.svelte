@@ -7,19 +7,22 @@
 
 	export let currentIndex = 0
 
+	// this stores the items
+	// I have a custom type so I get completion here
 	const items: Item[] = [
 		{
 			name: "Home",
 			href: "/",
 			icon: HomeIcon,
+			// this line allows me to switch icon depending on which item is selected
 			selectedIcon: SelectedHomeIcon,
-			selected: true,
 		},
 		{
 			name: "Docs",
 			href: "/",
 			icon: BookIcon,
 			selectedIcon: SelectedBookIcon,
+			// this inserts a separator and adjusts the margin
 			endOfSection: true,
 			external: true,
 		},
@@ -66,31 +69,19 @@
 </nav>
 
 <style lang="scss">
-	@use "static/global" as styles;
+	@use "static/colors";
 
 	#navbar {
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		width: 100%;
-	}
-
-	:global(#theme-button) {
-		width: 3em;
-		height: 3em;
-		margin-right: 1em;
-		padding: 0;
-	}
-
-	#navbar-logo-link {
-		border-radius: 4px;
+		width: 100vw;
 	}
 
 	#navbar-logo {
-		width: 48px;
-		height: 48px;
-		margin-top: .5em;
-		margin-left: 1em;
+		width: 3rem;
+		height: 3rem;
+		margin: .5rem 0 0 1rem;
 		user-select: none;
 		-webkit-user-drag: none;
 	}
@@ -100,40 +91,41 @@
 		align-items: flex-start; // vertical
 		flex-flow: row nowrap;
 		justify-content: center; // horizontal
+		min-height: 1.5rem;
 
 		.navbar-link {
 			font: {
 				weight: 500;
-				size: 16px;
+				size: 1rem;
 			}
-			margin-right: 1.5em;
+			margin-right: 1.5rem;
 			cursor: pointer;
 			user-select: none;
 			transition: 200ms ease opacity;
 			text-decoration: none;
-			color: styles.$light-text-primary;
-			border-radius: 2px;
+			color: colors.$light-text-primary;
 
 			&.end-of-section { margin-right: 0 }
 
-			&:hover { opacity: 0.75 }
+			&:hover { opacity: .75 }
 
-			&:where(.selected, :focus-visible) { color: styles.$accent }
+			&:where(.selected, :focus-visible) { color: colors.$accent }
 		}
 
 		.navbar-icon {
 			display: inline;
-			height: 1.5em;
-			margin-right: .3em;
+			height: 1.5rem;
+			margin-right: .3rem;
 			vertical-align: bottom;
-			fill: styles.$accent;
+			fill: colors.$accent;
 		}
 	}
 
 	.navbar-divider {
-		height: 24px;
-		margin: 0 18px;
+		width: 3px;
+		height: 1.5rem;
+		margin: 0 1.125rem;
 		opacity: 0.15;
-		border-left: 3px solid #000;
+		background: black;
 	}
 </style>

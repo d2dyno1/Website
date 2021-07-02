@@ -2,6 +2,7 @@
 	// Fetch contributors
 	import type { Contributor } from "../utilTypes"
 	import { getContributors } from "../routes/fetchHomepageData"
+	import AvatarIcon from "@fluentui/svg-icons/icons/person_32_filled.svg?raw"
 
 	export let pageNumber = 1
 
@@ -11,7 +12,7 @@
 <div class="contributors-row">
 	{#await contributors}
 		<div class="contributor-card">
-			<i class="contributor-avatar ms-Icon ms-Icon--CloudDownload" aria-hidden="true"></i>
+			<div class="contributor-avatar" aria-hidden="true">{@html AvatarIcon}</div>
 			<div class="contributor-info">
 				<h5>Loading...</h5>
 				<span>Loading contributions...</span>
@@ -35,7 +36,7 @@
 		{/each}
 	{:catch error}
 		<div class="contributor-card">
-			<i class="contributor-avatar ms-Icon ms-Icon--Error" aria-hidden="true"></i>
+			<div class="contributor-avatar-error" aria-hidden="true">{@html AvatarIcon}</div>
 			<div class="contributor-info">
 				<h5>Error!</h5>
 				<span>Failed to load contributions.</span>
@@ -45,7 +46,7 @@
 </div>
 
 <style lang="scss">
-	@use "static/global" as styles;
+	@use "static/colors";
 
 	.contributors-row {
 		margin-bottom: 10px;
@@ -76,17 +77,21 @@
 		display: inline-flex;
 		align-items: center;
 		margin-right: 10px;
-		padding: 1em;
-		border-radius: .5em;
-		background-color: rgba(255, 255, 255, 0.7);
-		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
+		padding: 1rem;
+		border-radius: 1em;
+		background-color: hsla(0, 0%, 100%, 0.7);
+		box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -3px 0 hsla(0, 0%, 0%, 0.1);
 	}
 
 	.contributor-avatar {
-		width: 2em;
-		height: 2em;
+		width: 2rem;
+		min-height: 2rem;
 		border-radius: 50%;
 		object-fit: cover;
+
+		&-error {
+			fill: darken(red, 15%);
+		}
 	}
 
 	.contributor-info {
@@ -94,10 +99,10 @@
 
 		span {
 			font: {
-				size: .8em;
+				size: .8rem;
 				weight: 500;
 			}
-			color: styles.$light-text-primary;
+			color: colors.$light-text-primary;
 
 			&:hover {
 				cursor: pointer;
@@ -106,11 +111,11 @@
 
 		h5 {
 			font: {
-				size: 1em;
+				size: 1rem;
 				weight: 600;
 			}
 			margin: 0;
-			color: styles.$accent;
+			color: colors.$accent;
 
 			&:hover {
 				cursor: pointer;
