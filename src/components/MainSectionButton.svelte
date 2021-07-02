@@ -28,7 +28,6 @@
 
 	.button-description {
 		font-size: .9em;
-		font-weight: 400;
 	}
 
 </style>

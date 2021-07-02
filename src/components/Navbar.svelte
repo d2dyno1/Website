@@ -6,20 +6,24 @@
 		{
 			name: "Home",
 			href: "/",
+			icon: "Home"
 		},
 		{
 			name: "Docs",
 			href: "/",
+			icon: "BookAnswers",
 			external: true,
 		},
 		{
 			name: "Discord",
 			href: "https://discord.gg/files",
+			icon: "OfficeChat",
 			external: true,
 		},
 		{
 			name: "GitHub",
 			href: `https://github.com/files-community/files/`,
+			icon: "GitGraph",
 			external: true,
 		},
 	]
@@ -33,15 +37,18 @@
 		</a>
 		<div id="navbar-divider" role="separator"></div>
 		{#each items as item, i}
-			<!--suppress HtmlUnknownTarget -->
-			<a class="navbar-item"
-			   class:selected={selectedItem === i}
-			   href={item.href}
-			   target={item.external ? "_blank" : undefined}
-			   rel={item.external ? "noreferrer noopener" : undefined}
-			>
-				{item.name}
-			</a>
+			<div class="navbar-item">
+				<i class="ms-Icon ms-{item.brandIcon ? 'BrandIcon' : 'Icon'}--{item.icon}" aria-hidden="true"></i>
+				<!--suppress HtmlUnknownTarget -->
+				<a class="navbar-link"
+				   class:selected={selectedItem === i}
+				   href={item.href}
+				   target={item.external ? "_blank" : undefined}
+				   rel={item.external ? "noreferrer noopener" : undefined}
+				>
+					{item.name}
+				</a>
+			</div>
 		{/each}
 	</nav>
 	<Button custom id="theme-button">
@@ -55,6 +62,8 @@
 </header>
 
 <style lang="scss">
+	@use "static/global" as styles;
+
 	#navbar {
 		display: flex;
 		align-items: center;
@@ -88,26 +97,41 @@
 	}
 
 	.navbar-item {
-		font: {
-			weight: 500;
-			size: 16px;
-		}
-		margin-right: 32px;
-		cursor: pointer;
-		user-select: none;
-		transition: 200ms ease opacity;
-		text-decoration: none;
-		opacity: 0.5;
-		color: var(--text-primary);
-		border-radius: 2px;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: center;
 
-		&:hover {
-			opacity: 0.75;
+		.navbar-link {
+			font: {
+				weight: 500;
+				size: 16px;
+			}
+			margin-right: 32px;
+			cursor: pointer;
+			user-select: none;
+			transition: 200ms ease opacity;
+			text-decoration: none;
+			opacity: 0.5;
+			color: styles.$light-text-primary;
+			border-radius: 2px;
+
+			&:hover {
+				opacity: 0.75;
+			}
+
+			&.selected,
+			&:focus-visible {
+				opacity: 1;
+			}
 		}
 
-		&.selected,
-		&:focus-visible {
-			opacity: 1;
+		.ms-Icon {
+			font-size: 1.2em;
+			display: inline;
+			margin-right: .3em;
+			vertical-align: bottom;
+			color: styles.$accent;
 		}
 	}
 

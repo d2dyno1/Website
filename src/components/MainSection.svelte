@@ -96,6 +96,8 @@
 </PageSection>
 
 <style lang="scss">
+	@use "static/global" as styles;
+
 	#main-section {
 		z-index: 1;
 		display: flex;
@@ -106,7 +108,7 @@
 		min-height: 724px;
 		max-height: 1000px;
 		padding: 32px 72px;
-		background: #f1f1f1;
+		background: styles.$light-background-secondary;
 	}
 
 	#title {
@@ -132,6 +134,6 @@
 	}
 
 	#main-button-container {
-		margin-top: 24px;
+		margin-top: 1.5em;
 	}
 </style>

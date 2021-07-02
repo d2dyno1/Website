@@ -14,23 +14,23 @@
 		<slot/>
 	</h1>
 {:else if size === 2}
-	<h2 class="title" class:center {style}>
+	<h2 class="title {bold}" class:center {style}>
 		<slot/>
 	</h2>
 {:else if size === 3}
-	<h3 class="title" class:center {style}>
+	<h3 class="title {bold}" class:center {style}>
 		<slot/>
 	</h3>
 {:else if size === 4}
-	<h4 class="title" class:center {style}>
+	<h4 class="title {bold}" class:center {style}>
 		<slot/>
 	</h4>
 {:else if size === 5}
-	<h5 class="title" class:center {style}>
+	<h5 class="title {bold}" class:center {style}>
 		<slot/>
 	</h5>
 {:else if size === 6}
-	<h6 class="title" class:center {style}>
+	<h6 class="title {bold}" class:center {style}>
 		<slot/>
 	</h6>
 {/if}

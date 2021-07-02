@@ -1,11 +1,11 @@
 <script lang="ts">
 	// Fetch contributors
-	import type { Contributor } from "../utilTypes";
-	import { getContributors } from "../routes/fetchHomepageData";
+	import type { Contributor } from "../utilTypes"
+	import { getContributors } from "../routes/fetchHomepageData"
 
-	export let pageNumber = 1;
+	export let pageNumber = 1
 
-	let contributors: Promise<Contributor[]> = getContributors(pageNumber);
+	let contributors: Promise<Contributor[]> = getContributors(pageNumber)
 </script>
 
 <div class="contributors-row">
@@ -22,7 +22,7 @@
 			{#if !contributor.login.endsWith("[bot]")}
 				<div class="contributor-card">
 					<!--suppress HtmlUnknownTarget -->
-					<img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar" />
+					<img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
 					<div class="contributor-info"
 					     on:click={() => window.open(`https://github.com/${contributor.login}`)}>
 						<h5>{contributor.login}</h5>
@@ -45,6 +45,8 @@
 </div>
 
 <style lang="scss">
+	@use "static/global" as styles;
+
 	.contributors-row {
 		margin-bottom: 10px;
 		white-space: nowrap;
@@ -66,23 +68,27 @@
 		display: inline-flex;
 		align-items: center;
 		margin-right: 10px;
-		padding: 16px;
-		border-radius: 8px;
+		padding: 1em;
+		border-radius: .5em;
 		background-color: rgba(255, 255, 255, 0.7);
 		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.059), inset 0 -1px 0 rgba(0, 0, 0, 0.102);
 	}
 
 	.contributor-avatar {
-		width: 32px;
-		height: 32px;
+		width: 2em;
+		height: 2em;
 		border-radius: 50%;
 		object-fit: cover;
 	}
 
 	.contributor-info {
-		font-size: 12px;
+		font-size: .75em;
 		margin-left: 10px;
-		color: var(--text-secondary);
+		color: styles.$light-text-primary;
+
+		&:hover {
+			cursor: pointer;
+		}
 
 		h5 {
 			font: {
@@ -90,7 +96,7 @@
 				weight: 600;
 			}
 			margin: 0;
-			color: var(--text-primary);
+			color: styles.$accent;
 
 			&:hover {
 				cursor: pointer;

@@ -1,8 +1,25 @@
 @import url("https://rsms.me/inter/inter.css");
 
-//@mixin lightAcrylicLayerBackground {
-//	background: linear-gradient(0deg, rgba(239, 239, 239, 0.3), rgba(239, 239, 239, 0.3)), rgba(239, 239, 239, 0.95) url("https://modernflyouts-community.github.io/assets/noise.png") center/196px repeat;
-//}
+$accent: hsl(206, 100%, 42%);
+$accent-hover: darken($accent, 20%);
+$accent-active: darken($accent, 40%);
+
+$light-background-primary: white;
+$light-background-secondary: darken($light-background-primary, 5%);
+$light-text-primary: hsl(0, 0%, 8%);
+$light-text-secondary: lighten($light-text-primary, 36%);
+
+$dark-background-primary: black;
+$dark-background-secondary: lighten($dark-background-primary, 6%);
+$dark-text-primary: hsl(0, 0%, 95%);
+$dark-text-secondary: darken($dark-text-primary, 30%);
+
+$dark-acrylic-layer: linear-gradient(
+				0deg,
+				hsla(0, 0%, 18%, .2),
+				hsla(0, 0%, 18%, .2)
+),
+hsla(0, 0%, 18%, .95) url("https://modernflyouts-community.github.io/assets/noise.png") center/196px repeat;
 
 :root {
 	--text-opsz: 16;
@@ -10,47 +27,25 @@
 
 html,
 body {
-	font-family: "Segoe UI Variable Display", "Segoe UI", "Inter var", sans-serif;
+	font: {
+		family: "Segoe UI Variable Display", "Segoe UI", "Inter var", sans-serif;
+		variation-settings: "opsz" var(--text-opsz);
+		optical-sizing: auto;
+	}
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
 	margin: 0;
+
+	color: $light-text-primary;
 	outline: none;
-	font-variation-settings: "opsz" var(--text-opsz);
-	font-optical-sizing: auto;
+	background: $light-background-primary;
 }
 
-:focus-visible {
-	box-shadow: 0 0 0 2px var(--text-primary) !important;
-}
+:focus-visible { box-shadow: 0 0 0 2px var(--text-primary) !important }
 
 #main-inner-container,
-#main-left-container {
-	flex: 1 1 auto;
-}
+#main-left-container { flex: 1 1 auto }
 
-#community-section {
-	overflow: hidden;
-}
-
-$accent: #0078d4;
-$accentHover: #005ca3;
-$accentActive: #006bbd;
-
-$lightBackgroundPrimary: #fff;
-$lightBackgroundSecondary: #f1f1f1;
-$lightTextPrimary: #141414;
-$lightTextSecondary: #6f6f6f;
-
-$darkBackgroundPrimary: #000;
-$darkBackgroundSecondary: #0f0f0f;
-$darkTextPrimary: #f1f1f1;
-$darkTextSecondary: #a6a6a6;
-
-$darkAcrylicLayer: linear-gradient(
-				0deg,
-				rgba(45, 45, 45, 0.2),
-				rgba(45, 45, 45, 0.2)
-),
-rgba(45, 45, 45, 0.95) url("https://modernflyouts-community.github.io/assets/noise.png") center/196px repeat;
+#community-section { overflow: hidden }

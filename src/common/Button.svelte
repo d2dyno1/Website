@@ -64,28 +64,28 @@
 		}
 
 		&.secondary {
-			color: hsl(0, 0%, 8%);
-			background-color: darken(white, 10%);
+			color: styles.$light-text-primary;
+			background: styles.$light-background-secondary;
 			box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.06), inset 0 -1px 0 hsla(0, 0%, 0%, 0.1);
 
 			&:hover {
-				background-color: hsla(0, 0%, 100%, 0.5);
+				background: darken(styles.$light-background-secondary, 10%);
 			}
 
 			&:active {
 				color: hsla(0, 0%, 0%, 0.62);
-				background-color: hsla(0, 0%, 100%, 0.3);
+				background: darken(styles.$light-background-secondary, 20%);
 			}
 		}
 
 		&.primary {
-			color: hsl(0, 0%, 100%);
-			background-color: hsl(206, 100%, 42%);
+			color: styles.$dark-text-primary;
+			background-color: styles.$accent;
 			box-shadow: inset 0 -1px 0 hsla(0, 0%, 0%, 0.22);
 
-			&:hover { background-color: hsl(206, 100%, 32%) }
+			&:hover { background-color: styles.$accent-hover }
 
-			&:active { background-color: hsl(206, 100%, 37%) }
+			&:active { background-color: styles.$accent-active }
 		}
 
 		&[disabled] {
