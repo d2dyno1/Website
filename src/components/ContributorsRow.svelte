@@ -93,7 +93,10 @@
 		margin-left: 10px;
 
 		span {
-			font-size: .8em;
+			font: {
+				size: .8em;
+				weight: 500;
+			}
 			color: styles.$light-text-primary;
 
 			&:hover {
