@@ -2,5 +2,5 @@
 	import Navbar from "../components/Navbar.svelte"
 </script>
 
-<Navbar selectedItem={0}/>
+<Navbar/>
 <slot/>

@@ -1,36 +1,44 @@
 <script lang="ts">
 	import type { Item } from "../utilTypes"
-	import HomeIcon from "@fluentui/svg-icons/icons/home_24_filled.svg?raw"
-	import BookIcon from "@fluentui/svg-icons/icons/book_information_24_filled.svg?raw"
-	import ChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_filled.svg?raw"
-	import GitIcon from "@fluentui/svg-icons/icons/branch_24_filled.svg?raw"
+	import HomeIcon from "@fluentui/svg-icons/icons/home_24_regular.svg?raw"
+	import BookIcon from "@fluentui/svg-icons/icons/book_information_24_regular.svg?raw"
+	import ChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_regular.svg?raw"
+	import GitIcon from "@fluentui/svg-icons/icons/branch_24_regular.svg?raw"
+	import SelectedHomeIcon from "@fluentui/svg-icons/icons/home_24_filled.svg?raw"
+	import SelectedBookIcon from "@fluentui/svg-icons/icons/book_information_24_filled.svg?raw"
+	import SelectedChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_filled.svg?raw"
+	import SelectedGitIcon from "@fluentui/svg-icons/icons/branch_24_filled.svg?raw"
 
 	const items: Item[] = [
 		{
 			name: "Home",
 			href: "/",
-			icon: HomeIcon
+			icon: HomeIcon,
+			selectedIcon: SelectedHomeIcon,
+			selected: true,
 		},
 		{
 			name: "Docs",
 			href: "/",
 			icon: BookIcon,
+			selectedIcon: SelectedBookIcon,
 			external: true,
 		},
 		{
 			name: "Discord",
 			href: "https://discord.gg/files",
 			icon: ChatIcon,
+			selectedIcon: SelectedChatIcon,
 			external: true,
 		},
 		{
 			name: "GitHub",
 			href: `https://github.com/files-community/files/`,
 			icon: GitIcon,
+			selectedIcon: SelectedGitIcon,
 			external: true,
 		},
 	]
-	export let selectedItem: Item
 </script>
 
 <nav id="navbar">
@@ -40,10 +48,10 @@
 	<div id="navbar-divider" role="separator"></div>
 	{#each items as item, i}
 		<div class="navbar-item">
-			<div class="navbar-icon">{@html item.icon}</div>
+			<div class="navbar-icon">{@html item.selected ? item.selectedIcon : item.icon}</div>
 			<!--suppress HtmlUnknownTarget -->
 			<a class="navbar-link"
-			   class:selected={selectedItem === i}
+			   class:selected={item.selected}
 			   href={item.href}
 			   target={item.external ? "_blank" : undefined}
 			   rel={item.external ? "noreferrer noopener" : undefined}

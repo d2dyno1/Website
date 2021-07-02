@@ -1,4 +1,11 @@
-export type Item = { name: string; href: string; external?: boolean };
+export type Item = {
+	name: string;
+	href: string;
+	icon: string;
+	selectedIcon: string;
+	selected?: boolean;
+	external?: boolean;
+};
 export type File = {
 	name: string;
 	type: string;
