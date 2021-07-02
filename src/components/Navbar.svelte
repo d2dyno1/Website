@@ -76,12 +76,13 @@
 		align-items: center;
 		justify-content: flex-start;
 		width: 100vw;
+		height: 10vh;
+		margin-left: 1rem;
 	}
 
 	#navbar-logo {
 		width: 3rem;
 		height: 3rem;
-		margin: .5rem 0 0 1rem;
 		user-select: none;
 		-webkit-user-drag: none;
 	}

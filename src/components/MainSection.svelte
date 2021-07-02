@@ -1,9 +1,7 @@
 <script lang="ts">
-	import PageSection from "../common/PageSection.svelte"
 	import Flex from "../common/Flex.svelte"
 	import Title from "../common/text/Title.svelte"
 	import Subtext from "../common/text/Subtext.svelte"
-	import FilesApp from "./FilesApp.svelte"
 	import { getReleaseVersion } from "../routes/fetchHomepageData"
 	import { onMount } from "svelte"
 	import MainSectionButton from "./MainSectionButton.svelte"
@@ -13,11 +11,11 @@
 	onMount(() => {
 		let time = 0
 
-		const red = (x, y, t) => Math.floor(192 + 64 * Math.cos((x * x - y * y) / 300 + t))
+		const red = (x, y, t) => Math.floor(135 + 64 * Math.cos((x * x - y * y) / 300 + t))
 		const green = (x, y, t) =>
-				Math.floor(192 + 64 * Math.sin((x * x * Math.cos(t / 4) + y * y * Math.sin(t / 3)) / 300))
+				Math.floor(135 + 64 * Math.sin((x * x * Math.cos(t / 4) + y * y * Math.sin(t / 3)) / 300))
 		const blue = (x, y, t) =>
-				Math.floor(192 + 64 *
+				Math.floor(135 + 64 *
 						Math.sin(5 * Math.sin(t / 9) + ((x - 100) * (x - 100) + (y - 100) * (y - 100)) / 1100),
 				)
 
@@ -38,7 +36,7 @@
 	})
 </script>
 
-<PageSection id="main-section">
+<section id="main-section">
 	<Flex align="center" gap id="main-inner-container">
 		<Flex direction="column" id="main-left-container">
 			<div id="title">
@@ -90,20 +88,20 @@
 			</Flex>
 		</Flex>
 
-		<FilesApp/>
 		<canvas bind:this={canvas} height="32" id="background-canvas" width="32"></canvas>
 	</Flex>
-</PageSection>
+</section>
 
 <style lang="scss">
 	@use "static/colors";
 
 	#main-section {
+		position: relative;
 		display: flex;
 		overflow: hidden;
 		flex-direction: column;
 		justify-content: center;
-		min-height: 45.25rem;
+		min-height: 36rem;
 		padding: 2rem 4.5rem;
 		background: colors.$light-background-secondary;
 	}

@@ -9,6 +9,6 @@
 <style lang="scss">
 	.page-section {
 		position: relative;
-		padding: 72px;
+		padding: 4.5rem;
 	}
 </style>
