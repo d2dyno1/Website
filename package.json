@@ -23,6 +23,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"office-ui-fabric-core": "^11.0.0"
+		"@fluentui/svg-icons": "^1.1.134"
 	}
 }

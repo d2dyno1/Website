@@ -1,65 +1,58 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte"
 	import type { Item } from "../utilTypes"
+	import HomeIcon from "@fluentui/svg-icons/icons/home_24_filled.svg?raw"
+	import BookIcon from "@fluentui/svg-icons/icons/book_information_24_filled.svg?raw"
+	import ChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_filled.svg?raw"
+	import GitIcon from "@fluentui/svg-icons/icons/branch_24_filled.svg?raw"
 
 	const items: Item[] = [
 		{
 			name: "Home",
 			href: "/",
-			icon: "Home"
+			icon: HomeIcon
 		},
 		{
 			name: "Docs",
 			href: "/",
-			icon: "BookAnswers",
+			icon: BookIcon,
 			external: true,
 		},
 		{
 			name: "Discord",
 			href: "https://discord.gg/files",
-			icon: "OfficeChat",
+			icon: ChatIcon,
 			external: true,
 		},
 		{
 			name: "GitHub",
 			href: `https://github.com/files-community/files/`,
-			icon: "GitGraph",
+			icon: GitIcon,
 			external: true,
 		},
 	]
 	export let selectedItem: Item
 </script>
 
-<header id="navbar">
-	<nav>
-		<a href="/" id="navbar-logo-link">
-			<img alt="Files logo" id="navbar-logo" src="/logo.svg"/>
-		</a>
-		<div id="navbar-divider" role="separator"></div>
-		{#each items as item, i}
-			<div class="navbar-item">
-				<i class="ms-Icon ms-{item.brandIcon ? 'BrandIcon' : 'Icon'}--{item.icon}" aria-hidden="true"></i>
-				<!--suppress HtmlUnknownTarget -->
-				<a class="navbar-link"
-				   class:selected={selectedItem === i}
-				   href={item.href}
-				   target={item.external ? "_blank" : undefined}
-				   rel={item.external ? "noreferrer noopener" : undefined}
-				>
-					{item.name}
-				</a>
-			</div>
-		{/each}
-	</nav>
-	<Button custom id="theme-button">
-		<svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-			<path
-					d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 20V4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20Z"
-					fill="currentColor"
-			/>
-		</svg>
-	</Button>
-</header>
+<nav id="navbar">
+	<a href="/" id="navbar-logo-link">
+		<img alt="Files logo" id="navbar-logo" src="/logo.svg"/>
+	</a>
+	<div id="navbar-divider" role="separator"></div>
+	{#each items as item, i}
+		<div class="navbar-item">
+			<div class="navbar-icon">{@html item.icon}</div>
+			<!--suppress HtmlUnknownTarget -->
+			<a class="navbar-link"
+			   class:selected={selectedItem === i}
+			   href={item.href}
+			   target={item.external ? "_blank" : undefined}
+			   rel={item.external ? "noreferrer noopener" : undefined}
+			>
+				{item.name}
+			</a>
+		</div>
+	{/each}
+</nav>
 
 <style lang="scss">
 	@use "static/global" as styles;
@@ -67,13 +60,8 @@
 	#navbar {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-start;
 		width: 100%;
-
-		nav {
-			display: flex;
-			align-items: center;
-		}
 	}
 
 	:global(#theme-button) {
@@ -98,9 +86,9 @@
 
 	.navbar-item {
 		display: flex;
-		align-items: center;
-		flex-direction: row;
-		justify-content: center;
+		align-items: flex-start; // vertical
+		flex-flow: row nowrap;
+		justify-content: center; // horizontal
 
 		.navbar-link {
 			font: {
@@ -112,7 +100,6 @@
 			user-select: none;
 			transition: 200ms ease opacity;
 			text-decoration: none;
-			opacity: 0.5;
 			color: styles.$light-text-primary;
 			border-radius: 2px;
 
@@ -122,16 +109,16 @@
 
 			&.selected,
 			&:focus-visible {
-				opacity: 1;
+				color: styles.$accent;
 			}
 		}
 
-		.ms-Icon {
-			font-size: 1.2em;
+		.navbar-icon {
 			display: inline;
+			height: 1.5em;
 			margin-right: .3em;
 			vertical-align: bottom;
-			color: styles.$accent;
+			fill: styles.$accent;
 		}
 	}
 
