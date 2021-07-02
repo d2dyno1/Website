@@ -103,10 +103,13 @@
 		overflow: hidden;
 		flex-direction: column;
 		justify-content: center;
-		height: clamp(724px, 100vh, 1000px);
+		min-height: 45.25rem;
 		padding: 2rem 4.5rem;
 		background: colors.$light-background-secondary;
 	}
+
+	#main-inner-container,
+	#main-left-container { flex: 1 1 auto }
 
 	#title {
 		display: flex;

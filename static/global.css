@@ -9,6 +9,7 @@ body {
   font-variation-settings: "opsz" var(--text-opsz);
   font-optical-sizing: auto;
   position: relative;
+  overflow-x: hidden;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -20,15 +21,6 @@ body {
 
 :focus-visible {
   box-shadow: 0 0 0 2px #141414 !important;
-}
-
-#main-inner-container,
-#main-left-container {
-  flex: 1 1 auto;
-}
-
-#community-section {
-  overflow: hidden;
 }
 
 /*# sourceMappingURL=global.css.map */

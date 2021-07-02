@@ -13,19 +13,15 @@ body {
 		optical-sizing: auto;
 	}
 	position: relative;
+	overflow-x: hidden;
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
-	margin: 0;
 
+	margin: 0;
 	color: colors.$light-text-primary;
 	outline: none;
 	background: colors.$light-background-primary;
 }
 
 :focus-visible { box-shadow: 0 0 0 2px colors.$light-text-primary !important }
-
-#main-inner-container,
-#main-left-container { flex: 1 1 auto }
-
-#community-section { overflow: hidden }
