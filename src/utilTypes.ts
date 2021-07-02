@@ -1,10 +1,11 @@
 export type Item = {
 	name: string;
 	href: string;
-	icon: string;
-	selectedIcon: string;
+	icon?: string;
+	selectedIcon?: string;
 	selected?: boolean;
 	external?: boolean;
+	endOfSection?: boolean;
 };
 export type File = {
 	name: string;

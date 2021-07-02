@@ -49,7 +49,7 @@
 
 			<Flex gap id="main-button-container" wrap>
 				{#await getReleaseVersion()}
-					<MainSectionButton title="Downloading ..." description="Fetching version..."
+					<MainSectionButton title="Downloading&hellip;" description="Fetching version&hellip;"
 					                   href="ms-windows-store://pdp/?ProductId=9nghp3dx8hdx" type={"primary"}>
 						<svg fill="none" height="20" viewBox="0 0 48 48" width="20" xmlns="http://www.w3.org/2000/svg">
 							<path
@@ -91,8 +91,8 @@
 		</Flex>
 
 		<FilesApp/>
+		<canvas bind:this={canvas} height="32" id="background-canvas" width="32"></canvas>
 	</Flex>
-	<canvas bind:this={canvas} height="32" id="background-canvas" width="32"></canvas>
 </PageSection>
 
 <style lang="scss">

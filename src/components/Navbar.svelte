@@ -2,12 +2,10 @@
 	import type { Item } from "../utilTypes"
 	import HomeIcon from "@fluentui/svg-icons/icons/home_24_regular.svg?raw"
 	import BookIcon from "@fluentui/svg-icons/icons/book_information_24_regular.svg?raw"
-	import ChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_regular.svg?raw"
-	import GitIcon from "@fluentui/svg-icons/icons/branch_24_regular.svg?raw"
 	import SelectedHomeIcon from "@fluentui/svg-icons/icons/home_24_filled.svg?raw"
 	import SelectedBookIcon from "@fluentui/svg-icons/icons/book_information_24_filled.svg?raw"
-	import SelectedChatIcon from "@fluentui/svg-icons/icons/chat_bubbles_question_24_filled.svg?raw"
-	import SelectedGitIcon from "@fluentui/svg-icons/icons/branch_24_filled.svg?raw"
+
+	export let currentIndex = 0
 
 	const items: Item[] = [
 		{
@@ -22,20 +20,17 @@
 			href: "/",
 			icon: BookIcon,
 			selectedIcon: SelectedBookIcon,
+			endOfSection: true,
 			external: true,
 		},
 		{
 			name: "Discord",
 			href: "https://discord.gg/files",
-			icon: ChatIcon,
-			selectedIcon: SelectedChatIcon,
 			external: true,
 		},
 		{
 			name: "GitHub",
 			href: `https://github.com/files-community/files/`,
-			icon: GitIcon,
-			selectedIcon: SelectedGitIcon,
 			external: true,
 		},
 	]
@@ -45,19 +40,27 @@
 	<a href="/" id="navbar-logo-link">
 		<img alt="Files logo" id="navbar-logo" src="/logo.svg"/>
 	</a>
-	<div id="navbar-divider" role="separator"></div>
+	<div class="navbar-divider" role="separator"></div>
 	{#each items as item, i}
 		<div class="navbar-item">
-			<div class="navbar-icon">{@html item.selected ? item.selectedIcon : item.icon}</div>
+			{#if item.icon && item.selectedIcon}
+				<div class="navbar-icon">{@html currentIndex === i ? item.selectedIcon : item.icon}</div>
+			{/if}
+
 			<!--suppress HtmlUnknownTarget -->
 			<a class="navbar-link"
-			   class:selected={item.selected}
+			   class:selected={currentIndex === i}
+			   class:end-of-section={item.endOfSection}
 			   href={item.href}
 			   target={item.external ? "_blank" : undefined}
 			   rel={item.external ? "noreferrer noopener" : undefined}
 			>
 				{item.name}
 			</a>
+
+			{#if item.endOfSection}
+				<div class="navbar-divider" role="separator"></div>
+			{/if}
 		</div>
 	{/each}
 </nav>
@@ -103,7 +106,7 @@
 				weight: 500;
 				size: 16px;
 			}
-			margin-right: 32px;
+			margin-right: 1.5em;
 			cursor: pointer;
 			user-select: none;
 			transition: 200ms ease opacity;
@@ -111,14 +114,11 @@
 			color: styles.$light-text-primary;
 			border-radius: 2px;
 
-			&:hover {
-				opacity: 0.75;
-			}
+			&.end-of-section { margin-right: 0 }
 
-			&.selected,
-			&:focus-visible {
-				color: styles.$accent;
-			}
+			&:hover { opacity: 0.75 }
+
+			&:where(.selected, :focus-visible) { color: styles.$accent }
 		}
 
 		.navbar-icon {
@@ -130,10 +130,10 @@
 		}
 	}
 
-	#navbar-divider {
+	.navbar-divider {
 		height: 24px;
 		margin: 0 18px;
 		opacity: 0.15;
-		border-left: 1px solid #000;
+		border-left: 3px solid #000;
 	}
 </style>
