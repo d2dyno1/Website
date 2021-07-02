@@ -281,6 +281,7 @@
 	.files-app {
 		position: relative;
 		right: -72px;
+		z-index:1;
 		width: auto;
 		height: 70vh;
 		max-height: 600px;
