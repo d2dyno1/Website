@@ -1,12 +1,14 @@
-<script lang="ts">
-	export let center = false;
+<script>
+	export let center = false
 </script>
 
 <p class="subtext" class:text-center={center}>
-	<slot />
+	<slot/>
 </p>
 
 <style lang="scss">
+	@use "static/colors";
+
 	.subtext {
 		font: {
 			weight: 500;
@@ -14,7 +16,7 @@
 		}
 		line-height: 1.4;
 		margin: 1em 0;
-		color: #6f6f6f;
+		color: colors.$light-text-secondary;
 
 		&.text-center { text-align: center }
 	}

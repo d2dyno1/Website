@@ -36,9 +36,11 @@
 {/if}
 
 <style lang="scss">
+	@use "static/colors";
+
 	.title {
 		margin: 0;
-		color: var(--text-primary);
+		color: colors.$light-text-primary;
 		--text-opsz: 32;
 
 		&.center { text-align: center }
