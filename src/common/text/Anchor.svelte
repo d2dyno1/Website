@@ -3,8 +3,8 @@
 	export let target: string
 </script>
 
-<a class="anchor" {href} rel={target === '_blank' ? 'noreferrer noopener' : undefined}
-   target={target === '_blank' ? target : undefined}>
+<a class="anchor" {href} rel={target === '_blank' ? 'noreferrer noopener' : ''}
+   target={target === '_blank' ? target : ''}>
 	<slot/>
 </a>
 
