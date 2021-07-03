@@ -77,7 +77,7 @@
 		@include mixins.flex($inline: true, $align: center, $justify: start);
 
 		width: 100vw;
-		min-height: 10vh;
+		padding: 1em 0;
 		background: colors.$light-background-primary;
 	}
 
