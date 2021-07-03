@@ -77,7 +77,8 @@
 		@include mixins.flex($inline: true, $align: center, $justify: start);
 
 		width: 100vw;
-		height: 10vh;
+		min-height: 10vh;
+		background: colors.$light-background-primary;
 	}
 
 	#navbar-logo {
