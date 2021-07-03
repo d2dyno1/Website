@@ -27,7 +27,6 @@
 	@use "static/colors";
 
 	#community-section {
-		@include mixins.page-section;
 		@include mixins.blur-edges(colors.$light-background-primary);
 	}
 

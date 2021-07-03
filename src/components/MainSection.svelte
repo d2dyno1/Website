@@ -95,7 +95,6 @@
 	@use "static/mixins";
 
 	#main-section {
-		@include mixins.page-section;
 		@include mixins.flex($direction: column, $justify: center);
 
 		overflow: hidden;

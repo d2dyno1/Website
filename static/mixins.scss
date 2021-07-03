@@ -1,10 +1,5 @@
 @use "colors";
 
-@mixin page-section {
-	position: relative;
-	padding: 4.5rem;
-}
-
 @mixin border-siding {
 	box-sizing: border-box;
 }

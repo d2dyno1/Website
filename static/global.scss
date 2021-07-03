@@ -31,4 +31,9 @@ body {
 	&-center { @include mixins.subtext(true) }
 }
 
+section {
+	position: relative;
+	padding: 4.5rem;
+}
+
 :focus-visible { box-shadow: 0 0 0 2px colors.$light-text-primary !important }
