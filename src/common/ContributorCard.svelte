@@ -48,7 +48,7 @@
 
 		&:hover, &:active, &:focus, &:focus-visible {
 			transform: translateY(6px);
-			box-shadow: inset 0 0 0 3px $shadow-color-top, inset 0 -2px 0 $shadow-color-bottom;
+			box-shadow: inset 0 0 0 3px $shadow-color-top;
 		}
 	}
 
