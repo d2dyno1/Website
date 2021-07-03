@@ -19,10 +19,8 @@
 		"svelte": "^3.38.3",
 		"svelte-preprocess": "^4.7.3",
 		"tslib": "^2.3.0",
-		"typescript": "^4.3.5"
-	},
-	"type": "module",
-	"dependencies": {
+		"typescript": "^4.3.5",
 		"@fluentui/svg-icons": "^1.1.134"
-	}
+	},
+	"type": "module"
 }
