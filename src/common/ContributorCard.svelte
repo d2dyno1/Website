@@ -35,9 +35,9 @@
 
 	.contributor-card {
 		@include mixins.flex($inline: true, $align: center);
-
 		margin-right: 10px;
 		padding: 1rem;
+		transition: transform 150ms ease-in, box-shadow 150ms ease-in;
 		border-radius: 1em;
 		background-color: hsla(0, 0%, 100%, 0.7);
 		box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -8px 0 hsla(0, 0%, 0%, 0.1);
