@@ -100,6 +100,7 @@
 				size: 1rem;
 			}
 			margin-right: 1.5rem;
+
 			cursor: pointer;
 			user-select: none;
 			transition: 200ms ease opacity;
