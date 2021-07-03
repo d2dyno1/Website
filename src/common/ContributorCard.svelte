@@ -44,7 +44,7 @@
 		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		border-radius: 1em;
 		background-color: $card-background;
-		box-shadow: inset 0 0 0 3px $shadow-color-top, inset 0 -8px 0 $shadow-color-bottom;
+		box-shadow: inset 0 0 0 4px $shadow-color-top, inset 0 -8px 0 $shadow-color-bottom;
 
 		&:hover, &:active, &:focus, &:focus-visible {
 			transform: translateY(6px);
@@ -79,16 +79,18 @@
 		}
 
 		h5 {
+			margin: 0;
 			font: {
 				size: 1rem;
 				weight: 600;
 			}
-			margin: 0;
 			color: colors.$accent;
+			--text-opsz: 32;
 
 			&:hover {
 				cursor: pointer;
 				text-decoration: underline;
+				text-underline-position: from-font;
 			}
 		}
 	}
