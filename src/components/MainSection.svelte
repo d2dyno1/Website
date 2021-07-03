@@ -4,7 +4,7 @@
 	import Subtext from "../common/text/Subtext.svelte"
 	import { getReleaseVersion } from "../routes/fetchHomepageData"
 	import { onMount } from "svelte"
-	import MainSectionButton from "./MainSectionButton.svelte"
+	import MainSectionButton from "../common/MainSectionButton.svelte"
 
 	let canvas: HTMLCanvasElement
 
@@ -94,9 +94,11 @@
 
 <style lang="scss">
 	@use "static/colors";
+	@use "static/mixins";
 
 	#main-section {
-		position: relative;
+		@include mixins.page-section;
+
 		display: flex;
 		overflow: hidden;
 		flex-direction: column;
@@ -105,9 +107,6 @@
 		padding: 2rem 4.5rem;
 		background: colors.$light-background-secondary;
 	}
-
-	#main-inner-container,
-	#main-left-container { flex: 1 1 auto }
 
 	#title {
 		display: flex;

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import PageSection from "../common/PageSection.svelte"
 	import Flex from "../common/Flex.svelte"
 	import Title from "../common/text/Title.svelte"
 	import Subtext from "../common/text/Subtext.svelte"
@@ -7,9 +6,9 @@
 	import ContributorsRow from "./ContributorsRow.svelte"
 </script>
 
-<PageSection id="community-section">
+<section id="community-section">
 	<Flex align="center" direction="column" id="community-section-inner" justify="center">
-		<Title bold={"semibold"} center size={3}>Community Driven</Title>
+		<Title bold="semibold" center size={3}>Community Driven</Title>
 		<Subtext center>
 			Files is
 			<Anchor href="https://github.com/files-community/Files/blob/main/LICENSE" target="_blank">
@@ -18,14 +17,22 @@
 			software maintained and designed by the community.
 		</Subtext>
 		<div class="contributors-container">
-			<ContributorsRow pageNumber={1}/>
-			<ContributorsRow pageNumber={2}/>
-			<ContributorsRow pageNumber={3}/>
+			{#each Array(3) as _, row}
+				<ContributorsRow pageNumber={row}/>
+			{/each}
 		</div>
 	</Flex>
-</PageSection>
+</section>
 
 <style lang="scss">
+	@use "static/mixins";
+	@use "static/colors";
+
+	#community-section {
+		@include mixins.page-section;
+		@include mixins.blur-edges(colors.$light-background-primary);
+	}
+
 	.contributors-container {
 		position: relative;
 		overflow: hidden;

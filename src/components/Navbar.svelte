@@ -70,8 +70,11 @@
 
 <style lang="scss">
 	@use "static/colors";
+	@use "static/mixins";
 
 	#navbar {
+		@include mixins.blur-edges-inset(colors.$light-background-secondary);
+
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;

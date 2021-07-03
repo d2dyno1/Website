@@ -1,0 +1,12 @@
+@mixin page-section {
+	position: relative;
+	padding: 4.5rem;
+}
+
+@mixin blur-edges($bg-color) {
+	box-shadow: 0 0 12px 12px $bg-color;
+}
+
+@mixin blur-edges-inset($bg-color) {
+	box-shadow: inset 0 0 12px 12px $bg-color;
+}

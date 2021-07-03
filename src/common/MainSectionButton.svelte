@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from "../common/Button.svelte"
-	import Flex from "../common/Flex.svelte"
-	import type { ButtonType } from "../utilTypes"
+	import Button from "./Button.svelte"
+	import Flex from "./Flex.svelte"
+	import type { ButtonType } from "src/utilTypes"
 
 	export let title: string
 	export let description: string

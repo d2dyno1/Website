@@ -4,9 +4,9 @@
 	import { getContributors } from "../routes/fetchHomepageData"
 	import AvatarIcon from "@fluentui/svg-icons/icons/person_32_filled.svg?raw"
 
-	export let pageNumber = 1
+	export let pageNumber = 0
 
-	let contributors: Promise<Contributor[]> = getContributors(pageNumber)
+	let contributors: Promise<Contributor[]> = getContributors(pageNumber + 1)
 </script>
 
 <div class="contributors-row">
@@ -80,7 +80,7 @@
 		padding: 1rem;
 		border-radius: 1em;
 		background-color: hsla(0, 0%, 100%, 0.7);
-		box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -3px 0 hsla(0, 0%, 0%, 0.1);
+		box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -8px 0 hsla(0, 0%, 0%, 0.1);
 	}
 
 	.contributor-avatar {
