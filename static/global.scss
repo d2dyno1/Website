@@ -1,4 +1,5 @@
 @use "colors";
+@use "mixins";
 @import url("https://rsms.me/inter/inter.css");
 
 :root {
@@ -7,6 +8,7 @@
 
 html,
 body {
+	@include mixins.border-siding;
 	font: {
 		family: "Segoe UI Variable Display", "Segoe UI", "Inter var", sans-serif;
 		variation-settings: "opsz" var(--text-opsz);
@@ -14,7 +16,6 @@ body {
 	}
 	position: relative;
 	overflow-x: hidden;
-	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
 
@@ -22,6 +23,12 @@ body {
 	color: colors.$light-text-primary;
 	outline: none;
 	background: colors.$light-background-primary;
+}
+
+.subtext {
+	@include mixins.subtext();
+
+	&-center { @include mixins.subtext(true) }
 }
 
 :focus-visible { box-shadow: 0 0 0 2px colors.$light-text-primary !important }

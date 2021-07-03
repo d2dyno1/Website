@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Title from "../common/text/Title.svelte"
-	import Subtext from "../common/text/Subtext.svelte"
 	import Anchor from "../common/text/Anchor.svelte"
 	import ContributorsRow from "./ContributorsRow.svelte"
 </script>
@@ -8,13 +7,13 @@
 <section id="community-section">
 	<div id="community-section-inner">
 		<Title bold="semibold" center size={3}>Community Driven</Title>
-		<Subtext center>
+		<p class="subtext-center">
 			Files is
 			<Anchor href="https://github.com/files-community/Files/blob/main/LICENSE" target="_blank">
 				free and open source
 			</Anchor>
 			software maintained and designed by the community.
-		</Subtext>
+		</p>
 		<div class="contributors-container">
 			{#each Array(3) as _, row}
 				<ContributorsRow pageNumber={row}/>

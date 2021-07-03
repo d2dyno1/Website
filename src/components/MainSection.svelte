@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Title from "../common/text/Title.svelte"
-	import Subtext from "../common/text/Subtext.svelte"
 	import { getReleaseVersion } from "../routes/fetchHomepageData"
 	import { onMount } from "svelte"
 	import MainSectionButton from "../common/MainSectionButton.svelte"
@@ -42,7 +41,7 @@
 				<img alt="Files logo" height="72" src="/logo.svg"/>
 				<Title bold="semibold">Files</Title>
 			</div>
-			<Subtext>A modern file explorer that pushes the boundaries of the platform.</Subtext>
+			<p class="subtext">A modern file explorer that pushes the boundaries of the platform.</p>
 
 			<div id="main-button-container">
 				{#await getReleaseVersion()}
