@@ -78,12 +78,13 @@
 
 		width: 100vw;
 		height: 10vh;
-		margin-left: 1rem;
 	}
 
 	#navbar-logo {
 		width: 3rem;
 		height: 3rem;
+		margin-left: 1rem;
+
 		user-select: none;
 		-webkit-user-drag: none;
 	}
