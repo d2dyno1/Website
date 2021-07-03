@@ -6,15 +6,3 @@ $light-background-primary: white;
 $light-background-secondary: darken($light-background-primary, 10%);
 $light-text-primary: hsl(0, 0%, 8%);
 $light-text-secondary: lighten($light-text-primary, 26%);
-
-$dark-background-primary: black;
-$dark-background-secondary: lighten($dark-background-primary, 6%);
-$dark-text-primary: hsl(0, 0%, 95%);
-$dark-text-secondary: darken($dark-text-primary, 30%);
-
-$dark-acrylic-layer: linear-gradient(
-				0deg,
-				hsla(0, 0%, 18%, .2),
-				hsla(0, 0%, 18%, .2)
-),
-hsla(0, 0%, 18%, .95) url("https://modernflyouts-community.github.io/assets/noise.png") center/196px repeat;

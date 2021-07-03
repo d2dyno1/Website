@@ -77,7 +77,7 @@
 		}
 
 		&.primary {
-			color: colors.$dark-text-primary;
+			color: invert(colors.$light-text-primary, 100%);
 			background-color: colors.$accent;
 			box-shadow: inset 0 -1px 0 hsla(0, 0%, 0%, 0.22);
 
