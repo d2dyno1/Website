@@ -33,16 +33,15 @@
 
 <style lang="scss">
 	@use "static/colors";
+	@use "static/mixins";
 
 	.button {
+		@include mixins.flex($inline: true, $align: center, $justify: center);
+		@include mixins.border-siding;
+
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 1.2em;
-
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
 
 		max-width: 100%;
 		height: 2.75em;
@@ -59,8 +58,7 @@
 		outline: none;
 
 		span {
-			display: flex;
-			flex-direction: column;
+			@include mixins.flex($direction: column);
 		}
 
 		&.secondary {

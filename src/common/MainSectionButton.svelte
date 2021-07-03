@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Button from "./Button.svelte"
-	import Flex from "./Flex.svelte"
 	import type { ButtonType } from "src/utilTypes"
 
 	export let title: string
@@ -10,17 +9,27 @@
 </script>
 
 <Button custom {href} target="_blank" {type}>
-	<Flex align="center" gap>
+	<div class="button">
 		<slot/>
 
-		<Flex direction="column">
+		<div class="button-labels">
 			<span class="button-title">{title}</span>
 			<span class="button-description">{description}</span>
-		</Flex>
-	</Flex>
+		</div>
+	</div>
 </Button>
 
 <style lang="scss">
+	@use "static/mixins";
+
+	.button {
+		@include mixins.flex($align: center, $gap: true)
+	}
+
+	.button-labels {
+		@include mixins.flex($direction: column)
+	}
+
 	.button-title {
 		font-size: 1.1em;
 		font-weight: 600;

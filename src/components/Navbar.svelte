@@ -74,10 +74,8 @@
 
 	#navbar {
 		@include mixins.blur-edges-inset(colors.$light-background-secondary);
+		@include mixins.flex($inline: true, $align: center, $justify: start);
 
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
 		width: 100vw;
 		height: 10vh;
 		margin-left: 1rem;
@@ -91,10 +89,7 @@
 	}
 
 	.navbar-item {
-		display: flex;
-		align-items: flex-start; // vertical
-		flex-flow: row nowrap;
-		justify-content: center; // horizontal
+		@include mixins.flex($align: start, $justify: center);
 		min-height: 1.5rem;
 
 		.navbar-link {

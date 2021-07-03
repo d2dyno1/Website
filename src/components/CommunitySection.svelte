@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Flex from "../common/Flex.svelte"
 	import Title from "../common/text/Title.svelte"
 	import Subtext from "../common/text/Subtext.svelte"
 	import Anchor from "../common/text/Anchor.svelte"
@@ -7,7 +6,7 @@
 </script>
 
 <section id="community-section">
-	<Flex align="center" direction="column" id="community-section-inner" justify="center">
+	<div id="community-section-inner">
 		<Title bold="semibold" center size={3}>Community Driven</Title>
 		<Subtext center>
 			Files is
@@ -21,7 +20,7 @@
 				<ContributorsRow pageNumber={row}/>
 			{/each}
 		</div>
-	</Flex>
+	</div>
 </section>
 
 <style lang="scss">
@@ -31,6 +30,10 @@
 	#community-section {
 		@include mixins.page-section;
 		@include mixins.blur-edges(colors.$light-background-primary);
+	}
+
+	#community-section-inner {
+		@include mixins.flex($direction: column, $align: center, $justify: center);
 	}
 
 	.contributors-container {

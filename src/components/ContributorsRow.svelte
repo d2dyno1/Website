@@ -47,6 +47,7 @@
 
 <style lang="scss">
 	@use "static/colors";
+	@use "static/mixins";
 
 	.contributors-row {
 		margin-bottom: 10px;
@@ -74,8 +75,8 @@
 	}
 
 	.contributor-card {
-		display: inline-flex;
-		align-items: center;
+		@include mixins.flex($inline: true, $align: center);
+
 		margin-right: 10px;
 		padding: 1rem;
 		border-radius: 1em;

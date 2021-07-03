@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Flex from "../common/Flex.svelte"
 	import Title from "../common/text/Title.svelte"
 	import Subtext from "../common/text/Subtext.svelte"
 	import { getReleaseVersion } from "../routes/fetchHomepageData"
@@ -37,15 +36,15 @@
 </script>
 
 <section id="main-section">
-	<Flex align="center" gap id="main-inner-container">
-		<Flex direction="column" id="main-left-container">
+	<div id="main-inner-container">
+		<div id="main-left-container">
 			<div id="title">
 				<img alt="Files logo" height="72" src="/logo.svg"/>
 				<Title bold="semibold">Files</Title>
 			</div>
 			<Subtext>A modern file explorer that pushes the boundaries of the platform.</Subtext>
 
-			<Flex gap id="main-button-container" wrap>
+			<div id="main-button-container">
 				{#await getReleaseVersion()}
 					<MainSectionButton title="Downloading&hellip;" description="Fetching version&hellip;"
 					                   href="ms-windows-store://pdp/?ProductId=9nghp3dx8hdx" type={"primary"}>
@@ -85,11 +84,11 @@
 								fill="currentColor" fill-rule="evenodd"></path>
 					</svg>
 				</MainSectionButton>
-			</Flex>
-		</Flex>
+			</div>
+		</div>
 
 		<canvas bind:this={canvas} height="32" id="background-canvas" width="32"></canvas>
-	</Flex>
+	</div>
 </section>
 
 <style lang="scss">
@@ -98,19 +97,24 @@
 
 	#main-section {
 		@include mixins.page-section;
+		@include mixins.flex($direction: column, $justify: center);
 
-		display: flex;
 		overflow: hidden;
-		flex-direction: column;
-		justify-content: center;
 		min-height: 36rem;
 		padding: 2rem 4.5rem;
 		background: colors.$light-background-secondary;
+
+		#main-inner-container {
+			@include mixins.flex($align: center, $gap: true);
+
+			#main-left-container {
+				@include mixins.flex($direction: column);
+			}
+		}
 	}
 
 	#title {
-		display: flex;
-		align-items: center;
+		@include mixins.flex($align: center);
 		gap: 3%;
 
 		img {
@@ -130,6 +134,8 @@
 	}
 
 	#main-button-container {
+		@include mixins.flex($wrap: true, $gap: true);
+
 		margin-top: 1.5em;
 	}
 </style>
