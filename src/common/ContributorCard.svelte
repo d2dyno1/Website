@@ -33,18 +33,22 @@
 	@use "static/colors";
 	@use "static/mixins";
 
+	$card-background: hsla(0, 0%, 100%, 0.7);
+	$shadow-color-top: hsla(0, 0%, 0%, 0.1);
+	$shadow-color-bottom: hsla(0, 0%, 0%, 0.2);
+
 	.contributor-card {
 		@include mixins.flex($inline: true, $align: center);
 		margin-right: 10px;
 		padding: 1rem;
-		transition: transform 150ms ease-in, box-shadow 150ms ease-in;
+		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		border-radius: 1em;
-		background-color: hsla(0, 0%, 100%, 0.7);
-		box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -8px 0 hsla(0, 0%, 0%, 0.1);
+		background-color: $card-background;
+		box-shadow: inset 0 0 0 3px $shadow-color-top, inset 0 -8px 0 $shadow-color-bottom;
 
 		&:hover, &:active, &:focus, &:focus-visible {
 			transform: translateY(6px);
-			box-shadow: inset 0 0 0 3px hsla(0, 0%, 0%, 0.06), inset 0 -2px 0 hsla(0, 0%, 0%, 0.1);
+			box-shadow: inset 0 0 0 3px $shadow-color-top, inset 0 -2px 0 $shadow-color-bottom;
 		}
 	}
 
