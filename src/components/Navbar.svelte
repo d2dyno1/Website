@@ -121,7 +121,6 @@
 			display: inline;
 			height: 1.5rem;
 			margin-right: .3rem;
-			vertical-align: bottom;
 			fill: colors.$accent;
 		}
 	}

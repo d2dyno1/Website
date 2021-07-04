@@ -7,13 +7,12 @@
 	export let href: string
 	export let target = undefined
 	export let disabled: boolean
-	export let center = false
 	export let className: string
 	export let customStyles = false
 </script>
 
 {#if !href}
-	<button class="button {type}" {id} {disabled} type="button" {className}>
+	<button class="button {type} {className}" {id} {disabled} type="button">
 		{#if custom}
 			<slot/>
 		{:else}
@@ -21,10 +20,10 @@
 		{/if}
 	</button>
 {:else}
-	<a class={type} class:button={!customStyles} type="button" role="button"
+	<a class="{className} {type}" class:button={!customStyles} type="button" role="button"
 	   target={target === '_blank' ? target : "_self"}
 	   rel={target === '_blank' ? 'noreferrer noopener' : undefined}
-	   {href} {id} {disabled} {className}>
+	   {href} {id} {disabled}>
 		{#if custom}
 			<slot/>
 		{:else}

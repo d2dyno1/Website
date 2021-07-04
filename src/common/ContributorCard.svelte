@@ -19,13 +19,13 @@
 		</div>
 	</a>
 {:else}
-	<a class="contributor-card">
+	<div class="contributor-card">
 		<div class="contributor-avatar" class:error aria-hidden="true">{@html AvatarIcon}</div>
 		<div class="contributor-info">
 			<h5>{!error ? "Loading..." : "Error!"}</h5>
 			<span>{!error ? "Loading contributions..." : "Failed to load contributions."}</span>
 		</div>
-	</a>
+	</div>
 {/if}
 
 <style lang="scss">
