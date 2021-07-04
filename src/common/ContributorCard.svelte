@@ -44,23 +44,27 @@
 		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		border-radius: 1em;
 		background-color: $card-background;
-		box-shadow: inset 0 0 0 4px $shadow-color-top, inset 0 -8px 0 $shadow-color-bottom;
+		box-shadow: inset 0 0 0 4px $shadow-color-top, inset 0 -8px 2px $shadow-color-bottom;
 
 		&:hover, &:active, &:focus, &:focus-visible {
 			transform: translateY(6px);
 			box-shadow: inset 0 0 0 4px $shadow-color-top;
+
+			.contributor-avatar {
+				transform: translateY(2px);
+				box-shadow: inset 0 0 0 4px $shadow-color-top;
+			}
 		}
 	}
 
 	.contributor-avatar {
 		width: 2rem;
 		min-height: 2rem;
+		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		border-radius: 50%;
-		object-fit: cover;
+		box-shadow: 0 0 0 4px darken($shadow-color-top, 15%), 0 8px 2px darken($shadow-color-bottom, 15%);
 
-		&.error {
-			fill: darken(red, 15%);
-		}
+		&.error { fill: darken(red, 15%) }
 	}
 
 	.contributor-info {
