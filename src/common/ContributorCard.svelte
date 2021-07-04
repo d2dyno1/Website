@@ -8,25 +8,24 @@
 </script>
 
 {#if loaded}
-	<div class="contributor-card">
+	<a href="https://github.com/{contributor.login}" target="_blank" class="contributor-card">
 		<!--suppress HtmlUnknownTarget -->
 		<img class="contributor-avatar" src={contributor.avatar_url} alt="{contributor.login} avatar"/>
-		<div class="contributor-info"
-		     on:click={() => window.open(`https://github.com/${contributor.login}`)}>
+		<div class="contributor-info">
 			<h5>{contributor.login}</h5>
 			<span>
 				{contributor.contributions} Contribution{contributor.contributions > 1 ? "s" : ""}
 			</span>
 		</div>
-	</div>
+	</a>
 {:else}
-	<div class="contributor-card">
+	<a class="contributor-card">
 		<div class="contributor-avatar" class:error aria-hidden="true">{@html AvatarIcon}</div>
 		<div class="contributor-info">
 			<h5>{!error ? "Loading..." : "Error!"}</h5>
 			<span>{!error ? "Loading contributions..." : "Failed to load contributions."}</span>
 		</div>
-	</div>
+	</a>
 {/if}
 
 <style lang="scss">
@@ -42,6 +41,7 @@
 		margin-right: 10px;
 		padding: 1rem;
 		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
+		text-decoration: none;
 		border-radius: 1em;
 		background-color: $card-background;
 		box-shadow: inset 0 0 0 4px $shadow-color-top, inset 0 -8px 2px $shadow-color-bottom;
@@ -93,7 +93,6 @@
 			&:hover {
 				cursor: pointer;
 				text-decoration: underline;
-				text-underline-position: from-font;
 			}
 		}
 	}

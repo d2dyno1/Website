@@ -81,13 +81,16 @@
 		background: colors.$light-background-primary;
 	}
 
-	#navbar-logo {
-		width: 3rem;
-		height: 3rem;
+	#navbar-logo-link {
 		margin-left: 1rem;
 
-		user-select: none;
-		-webkit-user-drag: none;
+		#navbar-logo {
+			width: 3rem;
+			height: 3rem;
+
+			user-select: none;
+			-webkit-user-drag: none;
+		}
 	}
 
 	.navbar-item {

@@ -35,9 +35,8 @@
 	}
 
 	.contributors-container {
-		position: relative;
-		overflow: hidden;
-		max-width: 1800px;
+		overflow: visible;
+		max-width: 100rem;
 	}
 
 	@media screen and (min-width: 1800px) {
