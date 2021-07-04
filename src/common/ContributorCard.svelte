@@ -51,8 +51,7 @@
 			box-shadow: inset 0 0 0 4px $shadow-color-top;
 
 			.contributor-avatar {
-				transform: translateY(2px);
-				box-shadow: inset 0 0 0 4px $shadow-color-top;
+				box-shadow: inset 0 0 0 4px darken($shadow-color-top, 15%);
 			}
 		}
 	}
