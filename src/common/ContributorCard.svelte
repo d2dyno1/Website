@@ -32,7 +32,7 @@
 	@use "static/colors";
 	@use "static/mixins";
 
-	$card-background: hsla(0, 0%, 100%, 0.7);
+	$card-background: darken(white, 5%);
 	$shadow-color: rgba(0, 0, 0, 0.04);
 	$shadow-color-hover: rgba(0, 0, 0, 0.14);
 
@@ -44,7 +44,7 @@
 		text-decoration: none;
 		border: 1px solid rgba(0, 0, 0, 0.0578);
 		border-radius: 1em;
-		background-color: white;
+		background-color: $card-background;
 		box-shadow: 0 2 4 10 $shadow-color;
 
 		&:hover, &:active, &:focus, &:focus-visible {
