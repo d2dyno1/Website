@@ -129,6 +129,10 @@
 		height: 100vh;
 		pointer-events: none;
 		mask: radial-gradient(at bottom right, #000, transparent 70%);
+
+		@media screen and (max-width: 975px) {
+			display: none;
+		}
 	}
 
 	#main-button-container {
