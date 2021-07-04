@@ -9,8 +9,8 @@
 		"format": "prettier --write --plugin-search-dir=. files-site"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-node": "^1.0.0-next.29",
-		"@sveltejs/kit": "^1.0.0-next.119",
+		"@sveltejs/adapter-node": "^1.0.0-next.30",
+		"@sveltejs/kit": "^1.0.0-next.120",
 		"autoprefixer": "^10.2.6",
 		"node-sass": "^6.0.1",
 		"postcss": "^8.3.5",
@@ -20,7 +20,7 @@
 		"svelte-preprocess": "^4.7.3",
 		"tslib": "^2.3.0",
 		"typescript": "^4.3.5",
-		"@fluentui/svg-icons": "^1.1.134"
+		"@fluentui/svg-icons": "^1.1.135"
 	},
 	"type": "module"
 }
