@@ -13,7 +13,7 @@
 	{#await contributors}
 		<ContributorCard loaded={false}/>
 	{:then contributorsLine}
-		{#each contributorsLine as contributor}
+		{#each contributorsLine.reverse() as contributor}
 			{#if !contributor.login.endsWith("[bot]")}
 				<ContributorCard {contributor}/>
 			{/if}

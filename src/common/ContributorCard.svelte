@@ -33,8 +33,8 @@
 	@use "static/mixins";
 
 	$card-background: hsla(0, 0%, 100%, 0.7);
-	$shadow-color-top: hsla(0, 0%, 0%, 0.1);
-	$shadow-color-bottom: hsla(0, 0%, 0%, 0.2);
+	$shadow-color: rgba(0, 0, 0, 0.04);
+	$shadow-color-hover: rgba(0, 0, 0, 0.14);
 
 	.contributor-card {
 		@include mixins.flex($inline: true, $align: center);
@@ -42,17 +42,14 @@
 		padding: 1rem;
 		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		text-decoration: none;
+		border: 1px solid rgba(0, 0, 0, 0.0578);
 		border-radius: 1em;
-		background-color: $card-background;
-		box-shadow: inset 0 0 0 4px $shadow-color-top, inset 0 -8px 2px $shadow-color-bottom;
+		background-color: white;
+		box-shadow: 0 2 4 10 $shadow-color;
 
 		&:hover, &:active, &:focus, &:focus-visible {
-			transform: translateY(6px);
-			box-shadow: inset 0 0 0 4px $shadow-color-top;
-
-			.contributor-avatar {
-				box-shadow: inset 0 0 0 4px darken($shadow-color-top, 15%);
-			}
+			transform: translateY(-3px);
+			box-shadow: 0 2px 4px $shadow-color-hover;
 		}
 	}
 
@@ -61,7 +58,6 @@
 		min-height: 2rem;
 		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
 		border-radius: 50%;
-		box-shadow: 0 0 0 4px darken($shadow-color-top, 15%), 0 8px 2px darken($shadow-color-bottom, 15%);
 
 		&.error { fill: darken(red, 15%) }
 	}
