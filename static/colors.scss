@@ -2,7 +2,7 @@ $accent: hsl(206, 100%, 37%);
 $accent-hover: darken($accent, 10%);
 $accent-active: darken($accent, 30%);
 
-$light-background-primary: white;
+$light-background-primary: darken(white, 5%);
 $light-background-secondary: darken($light-background-primary, 10%);
 $light-text-primary: hsl(0, 0%, 8%);
 $light-text-secondary: lighten($light-text-primary, 26%);

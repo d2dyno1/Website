@@ -32,7 +32,7 @@
 	@use "static/colors";
 	@use "static/mixins";
 
-	$card-background: darken(white, 5%);
+	$card-background: white;
 	$shadow-color: rgba(0, 0, 0, 0.04);
 	$shadow-color-hover: rgba(0, 0, 0, 0.14);
 
@@ -40,7 +40,7 @@
 		@include mixins.flex($inline: true, $align: center);
 		margin-right: 10px;
 		padding: 1rem;
-		transition: transform 100ms ease-in, box-shadow 100ms ease-in;
+		transition: transform 150ms ease-in, box-shadow 150ms ease-in;
 		text-decoration: none;
 		border: 1px solid rgba(0, 0, 0, 0.0578);
 		border-radius: 1em;
@@ -48,8 +48,8 @@
 		box-shadow: 0 2 4 10 $shadow-color;
 
 		&:hover, &:active, &:focus, &:focus-visible {
-			transform: translateY(-3px);
-			box-shadow: 0 2px 4px $shadow-color-hover;
+			transform: translateY(-.25rem);
+			box-shadow: 0 2px 8px $shadow-color-hover;
 		}
 	}
 
