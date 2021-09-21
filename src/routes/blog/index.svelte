@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import { Button, PageSection, HeaderChip, BlogCard, tilt } from "$lib";
+  import { Button, PageSection, HeaderChip, BlogCard, tilt, TextBox } from "$lib";
 
   interface Post {
     path: string;
@@ -23,9 +23,16 @@
   }
 
   export let posts: Post[];
+  let searchQuery = "";
 
-  const mainPost: Post = posts[0];
+  $: filteredPosts = posts.filter(item => {
+    item.metadata.title
+      .replace(/ /ig, "")
+      .toLowerCase()
+      .includes(searchQuery.replace(/ /ig, "").toLowerCase());
+  });
 
+  const mainPost: Post = searchQuery === "" ? posts[0] : filteredPosts[0];
   let scrollY: number;
 </script>
 
@@ -47,6 +54,7 @@
       width="0"
     />
   </div>
+  <input type="search" id="search-bar" bind:value={searchQuery} />
   <div class="main-post">
     <img
       alt="Main post thumbnail"
@@ -75,7 +83,7 @@
     </div>
   </div>
   <div class="blog-cards">
-    {#each posts.slice(1) as post}
+    {#each (searchQuery === "" ? posts : filteredPosts).slice(1) as post}
       <BlogCard path={post.path} {...post.metadata} />
     {/each}
   </div>

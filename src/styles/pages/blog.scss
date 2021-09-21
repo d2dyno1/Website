@@ -1,3 +1,5 @@
+@use "src/lib/TextBox/TextBox";
+
 :global {
 	#blog {
 		position: relative;
@@ -6,6 +8,18 @@
 			position: static;
 			max-width: 1200px;
 		}
+	}
+
+	#search-bar {
+		@extend .textbox-container, .textbox;
+
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-top: 1.5rem;
+		margin-inline: auto 1rem;
+
+		&::-webkit-calendar-picker-indicator { display: none !important } // remove the dropdown arrow
 	}
 }
 
