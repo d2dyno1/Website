@@ -12,10 +12,10 @@
 
 	onMount(() => {
 		// Iterate through feature cards every n seconds
-		setInterval(
+		/*setInterval(
 			() => (currentFeature += currentFeature !== 3 ? 1 : -currentFeature),
 			cardPaginationInterval * 1000
-		);
+		);*/
 	});
 </script>
 

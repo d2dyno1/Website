@@ -9,6 +9,18 @@ export interface FeatureCardData {
 	icon: any;
 }
 
+export interface CloudFile {
+	name: string;
+	icon: "folder" | "exe" | "music" | "zip" | "note" | "video" | "picture";
+	syncStatus: "success" | "sync";
+}
+
+export interface Tag {
+	name: string;
+	color: string;
+	contents: CloudFile[];
+}
+
 export const featureCards: FeatureCardData[] = [
 	{
 		title: "Seamless cloud integration",
@@ -36,41 +48,41 @@ export const featureCards: FeatureCardData[] = [
 	}
 ];
 
-export const cloudFiles = [
+export const cloudFiles: CloudFile[] = [
 	{
 		name: "GitHub",
 		icon: "folder",
-		status: "success"
+		syncStatus: "success"
 	},
 	{
 		name: "electron-v1.4.13-win32-ia32.zip",
 		icon: "zip",
-		status: "sync"
+		syncStatus: "sync"
 	},
 	{
 		name: "start.js",
 		icon: "note",
-		status: "success"
+		syncStatus: "success"
 	},
 	{
 		name: "2021-08-05 15.03.05.mp4",
 		icon: "video",
-		status: "success"
+		syncStatus: "success"
 	},
 	{
 		name: "christmas-card-2017.png",
 		icon: "picture",
-		status: "success"
+		syncStatus: "success"
 	},
 	{
 		name: "install.bat",
 		icon: "exe",
-		status: "success"
+		syncStatus: "success"
 	},
 	{
 		name: "dQw4w9WgXcQ.mp3",
 		icon: "music",
-		status: "success"
+		syncStatus: "success"
 	}
 ];
 
@@ -134,10 +146,22 @@ cout <span class="operator">&lt;&lt;</span> <span class="string">"Hello World"</
 	}
 ];
 
-export const tags = [
+export const tags: Tag[] = [
 	{
 		name: "Blue",
-		color: "#0072bd"
+		color: "#0072bd",
+		contents: [
+			{
+				name: "src",
+				icon: "folder",
+				syncStatus: "success"
+			},
+			{
+				name: "",
+				icon: "note",
+				syncStatus: "success"
+			}
+		]
 	},
 	{
 		name: "Orange",

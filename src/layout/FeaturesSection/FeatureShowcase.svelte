@@ -73,7 +73,7 @@
 				<th>Name</th>
 				<th>Status</th>
 			</tr>
-			{#each cloudFiles as { name, icon, status }, i}
+			{#each cloudFiles as { name, icon, syncStatus }, i}
 				<tr style="--file-index: {i}">
 					<td>
 						<img
@@ -84,8 +84,8 @@
 						/>
 					</td>
 					<td>{name}</td>
-					<td class="status-{status === 'success' ? status : 'sync'}">
-						{@html status === "success" ? Checkmark : ArrowSync}
+					<td class="status-{syncStatus === 'success' ? syncStatus : 'sync'}">
+						{@html syncStatus === "success" ? Checkmark : ArrowSync}
 					</td>
 				</tr>
 			{/each}
@@ -114,25 +114,23 @@
 						<iframe
 							title="Document"
 							style="border: none"
-							src="/preview-samples/{file.name}.{file.extension}"
-						/>
+							src="/preview-samples/{file.name}.{file.extension}"></iframe>
 					{:else if file?.code}
-						<pre
-							class="scroller">
-                            <code>
-                                {@html file.code}
-                            </code>
-                        </pre>
+						<pre class="scroller">
+							<code>
+								{@html file.code}
+							</code>
+						</pre>
 					{:else}
 						<img src={file.icon} alt="File icon" />
 					{/if}
 				</div>
-				<div class="grabber" />
+				<div class="grabber"></div>
 				<div class="metadata scroller">
 					<h4>
 						{file.name}{typeof file.extension !== "undefined"
-							? "."
-							: ""}{file.extension ?? ""}
+						? "."
+						: ""}{file.extension ?? ""}
 					</h4>
 					<h5>
 						{file.extension
@@ -146,7 +144,7 @@
 					{#if file?.dimensions?.horizontal && file?.dimensions?.vertical}
 						<h6>Dimensions</h6>
 						<span
-							>{file.dimensions.horizontal} x {file.dimensions.vertical}</span
+						>{file.dimensions.horizontal} x {file.dimensions.vertical}</span
 						>
 					{/if}
 					{#if file?.dpi?.horizontal}
@@ -189,8 +187,8 @@
 				>
 					<img src={file.icon} alt="File icon" />
 					{file.name}{typeof file.extension !== "undefined"
-						? "."
-						: ""}{file.extension ?? ""}
+					? "."
+					: ""}{file.extension ?? ""}
 				</div>
 			{/each}
 		</div>
@@ -211,6 +209,29 @@
 	</svg>
 	<div class="tags-showcase">
 		<div class="showcase-panel">
+			<table>
+				<tr>
+					<th></th>
+					<th>Name</th>
+					<th>Status</th>
+				</tr>
+				{#each tags[currentTag].contents as { name, icon, syncStatus }, i}
+					<tr style="--file-index: {i}">
+						<td>
+							<img
+								src="/ui/icons/{icon}.png"
+								alt={icon === "folder" ? `${icon} file` : "Folder"}
+								width="24"
+								height="24"
+							/>
+						</td>
+						<td>{name}</td>
+						<td class="status-{syncStatus === 'success' ? syncStatus : 'sync'}">
+							{@html syncStatus === "success" ? Checkmark : ArrowSync}
+						</td>
+					</tr>
+				{/each}
+			</table>
 			<div class="showcase-panel tags-picker">
 				{#each tags as { color }, i}
 					<ColorSwatch
