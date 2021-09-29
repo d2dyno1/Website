@@ -157,7 +157,7 @@ export const tags: Tag[] = [
 				syncStatus: "success"
 			},
 			{
-				name: "",
+				name: "package.json",
 				icon: "note",
 				syncStatus: "success"
 			}
@@ -165,7 +165,29 @@ export const tags: Tag[] = [
 	},
 	{
 		name: "Orange",
-		color: "#d95319"
+		color: "#d95319",
+		contents: [
+			{
+				name: "Pictures",
+				icon: "folder",
+				syncStatus: "sync"
+			},
+			{
+				name: "Documents",
+				icon: "folder",
+				syncStatus: "success"
+			},
+			{
+				name: "Videos",
+				icon: "folder",
+				syncStatus: "sync"
+			},
+			{
+				name: "Games",
+				icon: "folder",
+				syncStatus: "sync"
+			}
+		]
 	},
 	{
 		name: "Yellow",
